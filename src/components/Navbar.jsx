@@ -1,5 +1,4 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,22 +13,31 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import BedtimeIcon from "@mui/icons-material/Bedtime";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
 
-function Navbar(props) {
-  const { window } = props;
+function Navbar({ mood, setMood }) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const handleChangeMood = () => {
+    if (mood === "light") {
+      setMood("dark");
+    } else {
+      setMood("light");
+    }
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Sakib
       </Typography>
       <Divider />
       <List>
@@ -40,12 +48,17 @@ function Navbar(props) {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding>
+          <ListItemButton
+            sx={{ display: "flex", justifyContent: "center" }}
+            onClick={handleChangeMood}
+          >
+            {mood === "light" ? <BedtimeIcon /> : <WbSunnyIcon />}
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -77,12 +90,15 @@ function Navbar(props) {
                 {item}
               </Button>
             ))}
+            <IconButton sx={{ color: "#fff" }} onClick={handleChangeMood}>
+              {mood === "light" ? <BedtimeIcon /> : <WbSunnyIcon />}
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
       <nav>
         <Drawer
-          container={container}
+          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

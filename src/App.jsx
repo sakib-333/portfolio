@@ -1,12 +1,20 @@
-import React from "react";
-import { Box } from "@mui/material";
+import React, { useState } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Navbar from "./components/Navbar";
 
 const App = () => {
+  const [mood, setMood] = useState("light");
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: mood,
+    },
+  });
+
   return (
-    <Box>
-      <Navbar />
-    </Box>
+    <ThemeProvider theme={darkTheme}>
+      <Navbar mood={mood} setMood={setMood} />
+    </ThemeProvider>
   );
 };
 
