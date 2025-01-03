@@ -18,10 +18,11 @@ const Banner = () => {
       <Box
         sx={{
           flex: 1,
-          width: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
+          textAlign: { xs: "center", md: "left" },
+          width: { sx: "100%" },
         }}
       >
         <Typography
@@ -49,8 +50,15 @@ const Banner = () => {
             Rahman.
           </Typography>
         </Typography>
-        <Typography variant="p" sx={{ marginBottom: "1rem" }}>
-          Highly passionate about{" "}
+        <Box
+          sx={{
+            marginBottom: "1rem",
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: 1,
+          }}
+        >
+          <Typography variant="p">Highly passionate about</Typography>
           <Typography variant="p" sx={{ color: "red" }}>
             <Typewriter
               words={[
@@ -65,7 +73,7 @@ const Banner = () => {
               delaySpeed={2000}
             />
           </Typography>
-        </Typography>
+        </Box>
         <Box
           sx={{
             display: "flex",
