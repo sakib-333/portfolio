@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import logo from "/favicon.png";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -65,7 +66,11 @@ function Navbar({ mood, setMood }) {
       <CssBaseline />
       <AppBar
         component="nav"
-        sx={{ maxWidth: "xl", position: "static", margin: "0 auto" }}
+        sx={{
+          maxWidth: "xl",
+          position: "static",
+          margin: "0 auto",
+        }}
       >
         <Toolbar>
           <IconButton
@@ -77,13 +82,20 @@ function Navbar({ mood, setMood }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            Sakib
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
+            <img
+              src={logo}
+              style={{
+                width: "30px",
+                height: "30px",
+                borderRadius: "100%",
+                marginRight: "4px",
+              }}
+            />
+            <Typography variant="h6" component="div">
+              Sakib
+            </Typography>
+          </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "#fff" }}>
