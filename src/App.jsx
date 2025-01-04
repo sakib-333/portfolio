@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import { Box } from "@mui/material";
 import Technologies from "./components/Technologies";
+import About from "./components/About";
 
 const App = () => {
   const [mood, setMood] = useState("light");
@@ -19,6 +20,7 @@ const App = () => {
       <Navbar mood={mood} setMood={setMood} />
       <Box sx={{ p: 2, maxWidth: "xl", position: "static", margin: "0 auto" }}>
         <Banner />
+        <About />
         <Technologies />
       </Box>
     </ThemeProvider>
