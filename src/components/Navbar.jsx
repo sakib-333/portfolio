@@ -62,7 +62,7 @@ function Navbar({ mood, setMood }) {
   );
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", width: "100%", position: "fixed", zIndex: 10 }}>
       <CssBaseline />
       <AppBar
         component="nav"
