@@ -5,6 +5,7 @@ import Banner from "./components/Banner";
 import { Box } from "@mui/material";
 import Technologies from "./components/Technologies";
 import About from "./components/About";
+import MyEducation from "./components/MyEducation";
 
 const App = () => {
   const [mood, setMood] = useState("light");
@@ -22,6 +23,7 @@ const App = () => {
         <Banner />
         <About />
         <Technologies />
+        <MyEducation />
       </Box>
     </ThemeProvider>
   );
