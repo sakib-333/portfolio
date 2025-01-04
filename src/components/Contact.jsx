@@ -81,11 +81,12 @@ const Contact = () => {
               type="text"
               name="message"
               id="outlined-required-message"
+              multiline
+              minRows={5}
               label="Your message"
               placeholder="Hello! I would like to invite you, to work with us."
             />
-            <Button variant="contained" type="submit">
-              <SendIcon sx={{ marginRight: 1 }} />
+            <Button variant="contained" type="submit" endIcon={<SendIcon />}>
               Send
             </Button>
           </Box>
