@@ -7,6 +7,7 @@ import Technologies from "./components/Technologies";
 import About from "./components/About";
 import MyEducation from "./components/MyEducation";
 import MyProjects from "./components/MyProjects";
+import Contact from "./components/Contact";
 
 const App = () => {
   const [mood, setMood] = useState("light");
@@ -26,6 +27,7 @@ const App = () => {
         <Technologies />
         <MyProjects />
         <MyEducation />
+        <Contact />
       </Box>
     </ThemeProvider>
   );
