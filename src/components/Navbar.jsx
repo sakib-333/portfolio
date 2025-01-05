@@ -18,7 +18,7 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import logo from "/favicon.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["About", "Technologies", "Projects", "Education", "Contact"];
 
 function Navbar({ mood, setMood }) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -98,7 +98,7 @@ function Navbar({ mood, setMood }) {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button key={item} sx={{ color: "#fff", textTransform: "none" }}>
                 {item}
               </Button>
             ))}

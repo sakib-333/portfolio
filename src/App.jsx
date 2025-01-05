@@ -24,7 +24,7 @@ const App = () => {
       <Navbar mood={mood} setMood={setMood} />
       <Box sx={{ p: 2, maxWidth: "xl", position: "static", margin: "0 auto" }}>
         <Banner />
-        <About />
+        {/* <About /> */}
         <Technologies />
         <MyProjects />
         <MyEducation />
