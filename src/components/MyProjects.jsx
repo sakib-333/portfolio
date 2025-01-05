@@ -73,7 +73,7 @@ const MyProjects = () => {
                     <Typography variant="p" sx={{ fontWeight: "bold" }}>
                       Backend technologies:{" "}
                     </Typography>
-                    <Typography variant="p">{project.frontTech}</Typography>
+                    <Typography variant="p">{project.backTech}</Typography>
                   </Box>
                   <Box
                     sx={{
