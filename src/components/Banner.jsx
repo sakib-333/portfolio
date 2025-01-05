@@ -8,6 +8,12 @@ import Lottie from "lottie-react";
 import { Element } from "react-scroll";
 
 const Banner = () => {
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "../assets/mamun-cv.pdf"; // Path to the PDF file in the public folder
+    link.download = "mamun-cv.pdf"; // Default file name
+    link.click();
+  };
   return (
     <Element name="About">
       <Box
@@ -83,7 +89,11 @@ const Banner = () => {
               gap: 1,
             }}
           >
-            <Button variant="contained" color="success">
+            <Button
+              variant="contained"
+              color="success"
+              onClick={handleDownloadResume}
+            >
               <ArrowDownwardIcon /> <Typography>Download Resume</Typography>
             </Button>
             <Button variant="outlined">
