@@ -16,6 +16,7 @@ import Button from "@mui/material/Button";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import logo from "/favicon.png";
+import { Link, Events, scrollSpy } from "react-scroll";
 
 const drawerWidth = 240;
 const navItems = ["About", "Technologies", "Projects", "Education", "Contact"];
@@ -61,6 +62,19 @@ function Navbar({ mood, setMood }) {
     </Box>
   );
 
+  React.useEffect(() => {
+    // Initialize scroll events and spy on elements
+    Events.scrollEvent.register("begin");
+    Events.scrollEvent.register("end");
+    scrollSpy.update();
+
+    return () => {
+      // Clean up events when component unmounts
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
   return (
     <Box sx={{ display: "flex", width: "100%", position: "fixed", zIndex: 10 }}>
       <CssBaseline />
@@ -99,7 +113,15 @@ function Navbar({ mood, setMood }) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "#fff", textTransform: "none" }}>
-                {item}
+                <Link
+                  to={`${item}`}
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="active"
+                >
+                  {item}
+                </Link>
               </Button>
             ))}
             <IconButton sx={{ color: "#fff" }} onClick={handleChangeMood}>

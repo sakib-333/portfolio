@@ -19,6 +19,7 @@
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "^18.3.1",
     "react-material-ui-carousel": "^3.4.2",
+    "react-scroll": "^1.9.0",
     "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
