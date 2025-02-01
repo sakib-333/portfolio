@@ -17,6 +17,7 @@ import lightMoodLogo from "/lightMoodLogo.png";
 import darkMoodLogo from "/darkMoodLogo.png";
 import BedtimeIcon from "@mui/icons-material/Bedtime";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import { Link } from "react-scroll";
 
 interface Props {
   /**
@@ -26,12 +27,13 @@ interface Props {
   window?: () => Window;
   theme: "light" | "dark";
   toggleTheme: () => void;
+  actvSec: string;
 }
 
 const drawerWidth = 240;
 const navItems = ["About", "Technologies", "Projects", "Education", "Contact"];
 
-const Navbar = ({ window, theme, toggleTheme }: Props) => {
+const Navbar = ({ window, theme, toggleTheme, actvSec }: Props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -47,11 +49,36 @@ const Navbar = ({ window, theme, toggleTheme }: Props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+            <ListItemButton
+              sx={{
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              <Link to={`${item}`} smooth={true} duration={1000}>
+                <ListItemText
+                  sx={{
+                    textDecoration: actvSec === item ? "underline" : "none",
+                  }}
+                  primary={item}
+                />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <ListItemButton onClick={toggleTheme}>
+            {theme === "light" ? <BedtimeIcon /> : <WbSunnyIcon />}
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -60,9 +87,20 @@ const Navbar = ({ window, theme, toggleTheme }: Props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+        width: "100%",
+        position: "fixed",
+        left: "0",
+        zIndex: 10,
+      }}
+    >
       <CssBaseline />
-      <AppBar position="static" sx={{ maxWidth: "1536px" }} component="nav">
+      <AppBar
+        sx={{ maxWidth: "1536px", position: "static", margin: "0 auto" }}
+        component="nav"
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -94,11 +132,18 @@ const Navbar = ({ window, theme, toggleTheme }: Props) => {
               <Button
                 key={item}
                 sx={{
-                  color: "#fff",
+                  color: actvSec === item ? "#FFD700" : "#fff",
+                  textDecoration: actvSec === item ? "underline" : "none",
                   textTransform: "none",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                  fontSize: "12px",
                 }}
               >
-                {item}
+                <Link to={`${item}`} smooth={true} duration={1000}>
+                  {item}
+                </Link>
               </Button>
             ))}
             <IconButton sx={{ color: "#fff" }} onClick={toggleTheme}>
