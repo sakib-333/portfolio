@@ -23,7 +23,7 @@ const Technologies = ({ setActvSec, theme }: TechnologiesProps) => {
         ref={ref}
         className={`w-full h-full ${
           theme === "light" ? "bg-[#e0f2f1]" : "bg-[#263238]"
-        } p-4 py-4 sm:py-6 md:py-8 lg:py-10 min-h-screen`}
+        } p-4 py-4 sm:py-6 md:py-8 lg:py-10`}
       >
         <h1 className="font-bold text-center text-[28px] sm:text-4xl md:text-5xl lg:text-6xl">
           Technologies I Know

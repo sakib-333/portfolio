@@ -21,9 +21,6 @@ const Projects = ({ setActvSec }: ProjectsProps) => {
     }
   }, [inView, setActvSec]);
 
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
 
   return (
     <Element name="Projects">

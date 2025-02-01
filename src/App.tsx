@@ -31,7 +31,7 @@ const App = () => {
         <About setActvSec={setActvSec} />
         <Technologies theme={theme} setActvSec={setActvSec} />
         <Projects setActvSec={setActvSec} />
-        <Education setActvSec={setActvSec} />
+        <Education theme={theme} setActvSec={setActvSec} />
         <Contact setActvSec={setActvSec} />
       </div>
     </ThemeProvider>
