@@ -29,7 +29,7 @@ const App = () => {
       <div className="max-w-screen-2xl mx-auto w-full">
         <Navbar theme={theme} toggleTheme={toggleTheme} actvSec={actvSec} />
         <About setActvSec={setActvSec} />
-        <Technologies setActvSec={setActvSec} />
+        <Technologies theme={theme} setActvSec={setActvSec} />
         <Projects setActvSec={setActvSec} />
         <Education setActvSec={setActvSec} />
         <Contact setActvSec={setActvSec} />

@@ -57,13 +57,16 @@ const Navbar = ({ window, theme, toggleTheme, actvSec }: Props) => {
                 justifyContent: "center",
               }}
             >
-              <Link to={`${item}`} smooth={true} duration={1000}>
-                <ListItemText
-                  sx={{
-                    textDecoration: actvSec === item ? "underline" : "none",
-                  }}
-                  primary={item}
-                />
+              <Link
+                to={`${item}`}
+                style={{
+                  width: "100%",
+                  textDecoration: actvSec === item ? "underline" : "none",
+                }}
+                smooth={true}
+                duration={1000}
+              >
+                <ListItemText primary={item} />
               </Link>
             </ListItemButton>
           </ListItem>
