@@ -62,12 +62,10 @@ const Projects = ({ setActvSec }: ProjectsProps) => {
                     gap: "1rem",
                   }}
                 >
-                  <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                  <h1 className="font-bold text-xl sm:text-[22px] md:text-[24px] lg:text-[26px]">
                     {project.projectName}
-                  </Typography>
-                  <Typography variant="subtitle1">
-                    {project.decription}
-                  </Typography>
+                  </h1>
+                  <p className="text-justify">{project.decription}</p>
                   <Box>
                     <Typography
                       variant="subtitle1"
