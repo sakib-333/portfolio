@@ -6,6 +6,7 @@ import Technologies from "./Components/Technologies";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Contact from "./Components/Contact";
+import Footer from "./Components/Footer";
 
 const App = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -33,6 +34,7 @@ const App = () => {
         <Projects setActvSec={setActvSec} />
         <Education theme={theme} setActvSec={setActvSec} />
         <Contact setActvSec={setActvSec} />
+        <Footer theme={theme} />
       </div>
     </ThemeProvider>
   );
