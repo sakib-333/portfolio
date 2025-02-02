@@ -1,36 +1,47 @@
-import { useEffect } from "react";
+import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Element } from "react-scroll";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
-import { Box, Button, TextField } from "@mui/material";
+import { Alert, Box, Button, Snackbar, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { useForm, SubmitHandler } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 
 interface ContactProps {
   setActvSec: React.Dispatch<React.SetStateAction<string>>;
 }
 
-interface FormData {
-  senderName: string;
-  senderEmail: string;
-  message: string;
-}
-
 const Contact = ({ setActvSec }: ContactProps) => {
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const [open, setOpen] = useState<boolean>(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
+
   useEffect(() => {
     if (inView) {
       setActvSec("Contact");
     }
   }, [inView, setActvSec]);
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
-    reset();
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleSendEmail = (e: SyntheticEvent) => {
+    e.preventDefault();
+
+    if (formRef.current) {
+      const ENV = import.meta.env;
+      emailjs
+        .sendForm(ENV.VITE_serviceID, ENV.VITE_templateID, formRef.current, {
+          publicKey: ENV.VITE_publicKey,
+        })
+        .then(() => {
+          setOpen(true);
+          formRef.current?.reset();
+        });
+    }
   };
 
   return (
@@ -53,41 +64,61 @@ const Contact = ({ setActvSec }: ContactProps) => {
         </div>
         <Box
           component="form"
+          ref={formRef}
           sx={{
             width: "100%",
             display: "flex",
             flexDirection: "column",
             gap: 3,
           }}
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSendEmail}
         >
           <TextField
+            required
             type="text"
             id="outlined-required-name"
-            {...register("senderName", { required: true })}
             label="Your full name"
+            name="senderName"
             placeholder="John Snow"
           />
           <TextField
+            required
             type="email"
-            {...register("senderEmail", { required: true })}
             id="outlined-required-email"
             label="Your email address"
+            name="senderEmail"
             placeholder="snow@gmail.com"
           />
           <TextField
+            required
             type="text"
             id="outlined-required-message"
             multiline
+            name="message"
             minRows={5}
             label="Your message"
-            {...register("message", { required: true })}
             placeholder="Hello! I would like to invite you, to work with us."
           />
           <Button variant="contained" type="submit" endIcon={<SendIcon />}>
             Send
           </Button>
         </Box>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          open={open}
+          autoHideDuration={5000}
+          onClose={handleClose}
+        >
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            Email sent!
+          </Alert>
+        </Snackbar>
+        ;
       </div>
     </Element>
   );
