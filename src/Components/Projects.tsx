@@ -21,7 +21,6 @@ const Projects = ({ setActvSec }: ProjectsProps) => {
     }
   }, [inView, setActvSec]);
 
-
   return (
     <Element name="Projects">
       <div
@@ -131,6 +130,9 @@ const Projects = ({ setActvSec }: ProjectsProps) => {
                       color="secondary"
                       href={project.githubRepoBack}
                       variant="contained"
+                      sx={{
+                        fontSize: "12px",
+                      }}
                     >
                       <GitHubIcon
                         sx={{ fontSize: "16px", marginRight: "4px" }}
