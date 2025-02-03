@@ -13,6 +13,7 @@ interface ContactProps {
 
 const Contact = ({ setActvSec }: ContactProps) => {
   const [open, setOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement>(null);
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -30,6 +31,7 @@ const Contact = ({ setActvSec }: ContactProps) => {
 
   const handleSendEmail = (e: SyntheticEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     if (formRef.current) {
       const ENV = import.meta.env;
@@ -40,7 +42,8 @@ const Contact = ({ setActvSec }: ContactProps) => {
         .then(() => {
           setOpen(true);
           formRef.current?.reset();
-        });
+        })
+        .finally(() => setLoading(false));
     }
   };
 
@@ -100,9 +103,11 @@ const Contact = ({ setActvSec }: ContactProps) => {
             placeholder="Hello! I would like to invite you, to work with us."
           />
           <Button
-            variant="contained"
             type="submit"
-            endIcon={<SendIcon sx={{ fontSize: "14px" }} />}
+            endIcon={<SendIcon />}
+            loading={loading}
+            loadingPosition="center"
+            variant="contained"
           >
             Send
           </Button>
