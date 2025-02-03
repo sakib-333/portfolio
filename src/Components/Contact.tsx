@@ -118,7 +118,6 @@ const Contact = ({ setActvSec }: ContactProps) => {
             Email sent!
           </Alert>
         </Snackbar>
-        ;
       </div>
     </Element>
   );

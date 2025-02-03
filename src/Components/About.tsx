@@ -34,10 +34,10 @@ const About = ({ setActvSec }: AboutProps) => {
         <div className="w-full flex flex-col-reverse justify-center items-center sm:flex-row">
           <div className="w-full sm:flex-1 flex flex-col space-y-4 items-center sm:items-start ">
             <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              Hello there!
+              Hi there!
             </h1>
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-              I am Sakibur Rahman
+              I'm Sakibur Rahman
             </h1>
             <div className="w-full flex flex-col items-center sm:items-start gap-1 md:flex-row">
               <p className="max-w-[178px] w-full">Highly passionate about</p>
