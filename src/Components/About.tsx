@@ -3,11 +3,10 @@ import { useInView } from "react-intersection-observer";
 import { Element, Link } from "react-scroll";
 import coding from "../assets/codding.json";
 import Lottie from "lottie-react";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import { Typewriter } from "react-simple-typewriter";
-// import resume from "./sakib_resume.pdf";
 import { Link as MuiLink } from "@mui/material";
 
 interface AboutProps {
@@ -55,42 +54,41 @@ const About = ({ setActvSec }: AboutProps) => {
                 />
               </p>
             </div>
-            <div className="flex flex-col w-full items-center md:flex-row sm:items-start gap-4">
+            <div className="flex flex-col w-full items-center md:flex-row sm:items-start gap-3">
               <MuiLink
                 href={"/sakib_resume.pdf"}
-                sx={{ maxWidth: "280px", width: "100%" }}
+                sx={{ maxWidth: "270px", width: "100%" }}
                 download={"sakib_resume"}
               >
                 <Button
+                  startIcon={<ArrowDownwardIcon />}
                   variant="contained"
-                  sx={{ width: "100%", fontSize: "12px" }}
+                  sx={{
+                    width: "100%",
+                    fontSize: { xs: "10px", md: "14px" },
+                    fontWeight: "400",
+                  }}
                   color="success"
                 >
-                  <ArrowDownwardIcon sx={{ fontSize: "14px" }} />
                   Download resume
                 </Button>
               </MuiLink>
               <Link
                 to={"Contact"}
-                style={{ maxWidth: "280px", width: "100%" }}
+                style={{ maxWidth: "275px", width: "100%" }}
                 smooth={true}
                 duration={500}
               >
                 <Button
+                  startIcon={<ContactMailIcon />}
                   variant="outlined"
                   sx={{
                     width: "100%",
-                    fontSize: "12px",
-                    display: "flex",
-                    alignItems: "center",
+                    fontSize: { xs: "10px", md: "14px" },
+                    fontWeight: "400",
                   }}
                 >
-                  <ContactMailIcon
-                    sx={{ fontSize: "12px", marginRight: "4px" }}
-                  />
-                  <Typography sx={{ fontSize: "12px" }} variant="button">
-                    Contact
-                  </Typography>
+                  Contact
                 </Button>
               </Link>
             </div>

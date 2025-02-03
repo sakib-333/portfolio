@@ -99,7 +99,11 @@ const Contact = ({ setActvSec }: ContactProps) => {
             label="Your message"
             placeholder="Hello! I would like to invite you, to work with us."
           />
-          <Button variant="contained" type="submit" endIcon={<SendIcon />}>
+          <Button
+            variant="contained"
+            type="submit"
+            endIcon={<SendIcon sx={{ fontSize: "14px" }} />}
+          >
             Send
           </Button>
         </Box>

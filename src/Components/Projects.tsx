@@ -96,45 +96,42 @@ const Projects = ({ setActvSec }: ProjectsProps) => {
                     }}
                   >
                     <Button
+                      startIcon={<LiveTvIcon />}
                       target="_blank"
                       color="success"
                       href={project.liveSite}
                       variant="contained"
                       sx={{
-                        fontSize: "12px",
+                        fontSize: { xs: "10px", md: "14px" },
+                        fontWeight: "400",
                       }}
                     >
-                      <LiveTvIcon
-                        sx={{ fontSize: "16px", marginRight: "4px" }}
-                      />
                       Live
                     </Button>
                     <Button
+                      startIcon={<GitHubIcon />}
                       target="_blank"
                       color="primary"
                       href={project.githubRepoFront}
                       variant="contained"
                       sx={{
-                        fontSize: "12px",
+                        fontSize: { xs: "10px", md: "14px" },
+                        fontWeight: "400",
                       }}
                     >
-                      <GitHubIcon
-                        sx={{ fontSize: "16px", marginRight: "4px" }}
-                      />
                       Frontend
                     </Button>
                     <Button
+                      startIcon={<GitHubIcon />}
                       target="_blank"
                       color="secondary"
                       href={project.githubRepoBack}
                       variant="contained"
                       sx={{
-                        fontSize: "12px",
+                        fontSize: { xs: "10px", md: "14px" },
+                        fontWeight: "400",
                       }}
                     >
-                      <GitHubIcon
-                        sx={{ fontSize: "16px", marginRight: "4px" }}
-                      />
                       Backend
                     </Button>
                   </Box>
