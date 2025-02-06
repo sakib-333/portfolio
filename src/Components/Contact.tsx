@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { Element } from "react-scroll";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { Alert, Box, Button, Snackbar, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "@emailjs/browser";
@@ -63,6 +64,9 @@ const Contact = ({ setActvSec }: ContactProps) => {
           </p>
           <p>
             <EmailIcon /> <span>sakib.cse.333@gmail.com</span>
+          </p>
+          <p>
+            <LocalPhoneIcon /> <span>+8801955207333</span>
           </p>
         </div>
         <Box

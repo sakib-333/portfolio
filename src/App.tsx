@@ -1,16 +1,17 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useState } from "react";
 import Navbar from "./Components/Navbar";
-import About from "./Components/About";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Skills from "./Components/Skills";
+import Home from "./Components/Home";
+import About from "./Components/About";
 
 const App = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [actvSec, setActvSec] = useState<string>("About");
+  const [actvSec, setActvSec] = useState<string>("Home");
 
   const darkTheme = createTheme({
     palette: {
@@ -29,6 +30,7 @@ const App = () => {
     <ThemeProvider theme={darkTheme}>
       <div className="max-w-screen-2xl mx-auto w-full">
         <Navbar theme={theme} toggleTheme={toggleTheme} actvSec={actvSec} />
+        <Home theme={theme} setActvSec={setActvSec} />
         <About setActvSec={setActvSec} />
         <Skills theme={theme} setActvSec={setActvSec} />
         <Projects setActvSec={setActvSec} />
