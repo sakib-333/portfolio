@@ -31,7 +31,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["About", "Technologies", "Projects", "Education", "Contact"];
+const navItems = ["About", "Skills", "Projects", "Education", "Contact"];
 
 const Navbar = ({ window, theme, toggleTheme, actvSec }: Props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);

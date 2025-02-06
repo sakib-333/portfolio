@@ -2,23 +2,23 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Element } from "react-scroll";
 
-interface TechnologiesProps {
+interface SkillsProps {
   theme: "light" | "dark";
   setActvSec: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Technologies = ({ setActvSec, theme }: TechnologiesProps) => {
+const Skills = ({ setActvSec, theme }: SkillsProps) => {
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
   useEffect(() => {
     if (inView) {
-      setActvSec("Technologies");
+      setActvSec("Skills");
     }
   }, [inView, setActvSec]);
 
   return (
-    <Element name="Technologies">
+    <Element name="Skills">
       <div
         ref={ref}
         className={`w-full h-full ${
@@ -26,7 +26,7 @@ const Technologies = ({ setActvSec, theme }: TechnologiesProps) => {
         } p-4 py-4 sm:py-6 md:py-8 lg:py-10`}
       >
         <h1 className="font-bold text-center text-[28px] sm:text-4xl md:text-5xl lg:text-6xl">
-          Technologies I Know
+          Skills
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center mt-4 sm:mt-5 md:mt-6 lg:mt-7">
           <div>
@@ -87,4 +87,4 @@ const Technologies = ({ setActvSec, theme }: TechnologiesProps) => {
   );
 };
 
-export default Technologies;
+export default Skills;
