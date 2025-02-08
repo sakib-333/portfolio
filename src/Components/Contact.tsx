@@ -54,7 +54,13 @@ const Contact = ({ setActvSec }: ContactProps) => {
         ref={ref}
         className="w-full h-full flex flex-col items-center gap-4 sm:flex-row p-4 py-4 sm:py-6 md:py-8 lg:py-10"
       >
-        <div className="space-y-4 w-full">
+        <div
+          data-aos="zoom-in"
+          data-aos-easing="ease"
+          data-aos-once="false"
+          data-aos-duration="200"
+          className="space-y-4 w-full"
+        >
           <h1 className="max-w-[400px] w-full md:text-left font-bold text-[28px] sm:text-4xl md:text-5xl lg:text-6xl">
             Get in touch
           </h1>
@@ -70,6 +76,11 @@ const Contact = ({ setActvSec }: ContactProps) => {
           </p>
         </div>
         <Box
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-once="false"
+          data-aos-duration="200"
+          data-aos-offset="100"
           component="form"
           ref={formRef}
           sx={{

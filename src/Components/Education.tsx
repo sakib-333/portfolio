@@ -36,10 +36,22 @@ const Education = ({ theme, setActvSec }: EducationProps) => {
         } p-4 py-4 sm:py-6 md:py-8 lg:py-10`}
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-          <h1 className="max-w-[400px] w-full md:text-left font-bold text-[28px] sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1
+            data-aos="zoom-in"
+            data-aos-easing="ease"
+            data-aos-once="false"
+            data-aos-duration="200"
+            className="max-w-[400px] w-full md:text-left font-bold text-[28px] sm:text-4xl md:text-5xl lg:text-6xl"
+          >
             My Education
           </h1>
-          <div className="hidden md:block">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-center"
+            data-aos-once="false"
+            data-aos-duration="200"
+            className="hidden md:block"
+          >
             <Timeline
               sx={{
                 [`& .${timelineItemClasses.root}:before`]: {

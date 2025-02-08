@@ -27,13 +27,23 @@ const Projects = ({ setActvSec }: ProjectsProps) => {
         ref={ref}
         className="w-full h-full p-4 py-4 sm:py-6 md:py-8 lg:py-10"
       >
-        <h1 className="font-bold text-center text-[28px] sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1
+          data-aos="zoom-in"
+          data-aos-easing="ease"
+          data-aos-once="false"
+          data-aos-duration="200"
+          className="font-bold text-center text-[28px] sm:text-4xl md:text-5xl lg:text-6xl"
+        >
           My Projects
         </h1>
         <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-7">
           <Box>
             {myProjects.map((project, indx) => (
               <Box
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-once="false"
+                data-aos-duration="200"
                 key={project.id}
                 sx={{
                   display: "flex",

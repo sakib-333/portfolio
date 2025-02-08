@@ -23,10 +23,22 @@ const About = ({ setActvSec }: AboutProps) => {
         ref={ref}
         className="w-full h-full px-4 py-4 sm:py-6 md:py-8 lg:py-10"
       >
-        <h1 className="font-bold text-center text-[28px] sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1
+          data-aos="zoom-in"
+          data-aos-easing="ease"
+          data-aos-once="false"
+          data-aos-duration="200"
+          className="font-bold text-center text-[28px] sm:text-4xl md:text-5xl lg:text-6xl"
+        >
           About
         </h1>
-        <div className="space-y-4 md:space-y-8 lg:space-y-12 text-xl text-justify mt-4 sm:mt-5 md:mt-6 lg:mt-7">
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-once="false"
+          data-aos-duration="200"
+          className="space-y-4 md:space-y-8 lg:space-y-12 text-xl text-justify mt-4 sm:mt-5 md:mt-6 lg:mt-7"
+        >
           <p>
             I am <strong>Sakibur Rahman</strong>, a passionate{" "}
             <strong>front-end</strong> web developer from Bangladesh. In 2024 I

@@ -1,5 +1,5 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import Projects from "./Components/Projects";
 import Education from "./Components/Education";
@@ -8,6 +8,8 @@ import Footer from "./Components/Footer";
 import Skills from "./Components/Skills";
 import Home from "./Components/Home";
 import About from "./Components/About";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -26,6 +28,11 @@ const App = () => {
       setTheme("light");
     }
   };
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <ThemeProvider theme={darkTheme}>
       <div className="max-w-screen-2xl mx-auto w-full">
