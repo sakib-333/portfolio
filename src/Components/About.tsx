@@ -43,8 +43,9 @@ const About = ({ setActvSec }: AboutProps) => {
             I am <strong>Sakibur Rahman</strong>, a passionate{" "}
             <strong>front-end</strong> web developer from Bangladesh. In 2024 I
             had successfully completed my <strong>B.Sc&#40;Engg&#41;</strong>{" "}
-            from Bangabandhu Sheikh Mujibur Rahman Science and Technology
-            University, Gopalganj. My major was Computer Science and Engineering{" "}
+            degree from{" "}
+            <strong>Gopalganj Science and Technology University</strong>. My
+            major was Computer Science and Engineering{" "}
             <strong>&#40;CSE&#41;.</strong> Currently, I am open to work to
             anywhere in Bangladesh as well as in abroad through onsite or
             remote.
