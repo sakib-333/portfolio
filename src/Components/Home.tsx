@@ -60,9 +60,9 @@ const Home = ({ theme, setActvSec }: HomeProps) => {
             </div>
             <div className="flex flex-col w-full items-center md:flex-row sm:items-start gap-3">
               <MuiLink
-                href={"/sakib_resume.pdf"}
+                href={"/resume.pdf"}
                 sx={{ maxWidth: "270px", width: "100%" }}
-                download={"sakib_resume"}
+                download={"resume"}
               >
                 <Button
                   startIcon={<ArrowDownwardIcon />}
