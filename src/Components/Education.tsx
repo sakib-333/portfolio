@@ -70,8 +70,7 @@ const Education = ({ theme, setActvSec }: EducationProps) => {
                     B.Sc in Computer Science and Engineering
                   </Typography>
                   <Typography variant="subtitle1">
-                    Bangabandhu Sheikh Mujibur Rahman Science and Technology
-                    University, Gopalganj-8100
+                    Gopalganj Science and Technology University
                   </Typography>
                   <Typography variant="subtitle1">2024</Typography>
                 </TimelineContent>
