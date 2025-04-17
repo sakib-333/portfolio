@@ -3,11 +3,11 @@ import Navigation from "./Components/Navigation";
 
 const Navbar = () => {
   return (
-    <div className="p-4 flex items-center justify-between max-w-6xl w-full bg-color-1 fixed  mx-auto">
+    <div className="z-10 p-4 flex items-center justify-between max-w-6xl w-full bg-color-1 fixed  mx-auto">
       <div>
         <a href="#home-section" className="flex items-center gap-1.5">
           <img className="w-10 h-10" src="/favicon.png" alt="logo" />
-          <h1 className="text-2xl font-bold gradient-text bg-clip-text text-transparent bg-linear-to-r from-cyan-500 to-blue-500">
+          <h1 className="text-2xl font-bold gradient-text bg-clip-text text-transparent bg-linear-to-r from-color-2 to-color-3">
             Sakib
           </h1>
         </a>

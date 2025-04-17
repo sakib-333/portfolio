@@ -16,7 +16,7 @@ const Hamburger = () => {
       <ul
         className={`${
           isShowing ? "inline" : "hidden"
-        } min-h-screen w-full fixed left-0 top-20 space-y-3 pl-4 bg-color-1`}
+        } min-h-screen w-full fixed left-0 top-18 space-y-3 p-4 bg-color-1`}
       >
         <Navigation />
       </ul>
