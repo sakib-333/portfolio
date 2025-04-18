@@ -1,15 +1,12 @@
 import useInViewSection from "../../Hooks/useInViewSection";
 import Heading from "../Heading/Heading";
+import AdditionalSkills from "./AdditionalSkills";
 import MySkills from "./MySkills";
 
 const Skills = () => {
   const ref = useInViewSection("skills");
   return (
-    <div
-      ref={ref}
-      id="skills-section"
-      className="mt-20 pb-20 px-4 min-h-screen mx-auto"
-    >
+    <div ref={ref} id="skills-section" className="mt-20 pb-20 px-4 mx-auto">
       <Heading title="Skills" />
       <p className="max-w-2xl mt-4 mx-auto text-center text-color-4/80">
         A curated collection of my technical skills and proficiencies developed
@@ -17,6 +14,9 @@ const Skills = () => {
       </p>
       <div className="mt-16">
         <MySkills />
+      </div>
+      <div className="mt-16">
+        <AdditionalSkills />
       </div>
     </div>
   );
