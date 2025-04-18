@@ -5,9 +5,9 @@ import Qualities from "./Qualities";
 const About = () => {
   const ref = useInViewSection("about");
   return (
-    <div ref={ref} id="about-section" className="my-20 px-4 min-h-screen">
+    <div ref={ref} id="about-section" className="mt-20 pb-20 px-4">
       <Heading title="About Me" />
-      <div className="w-full flex flex-col lg:flex-row gap-10 relative">
+      <div className="w-full mt-16 flex flex-col lg:flex-row gap-10 relative">
         <div className="w-full lg:w-7/12 p-6 bg-color-5/50 rounded-lg">
           <h1 className="text-2xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-color-2 to-color-3">
             Who am I
