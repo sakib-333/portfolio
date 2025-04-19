@@ -3,18 +3,18 @@ import skilBtns from "./skillBtns";
 import SkillsStack from "./SkillsStack";
 
 const MySkills = () => {
-  const [actvSect, setActvSect] = useState("all skills");
+  const [actvCategry, setActvCategry] = useState("all skills");
   const [skills, setSkills] = useState(SkillsStack);
 
   useEffect(() => {
-    if (actvSect === "all skills") {
+    if (actvCategry === "all skills") {
       setSkills(SkillsStack);
     } else {
       setSkills(() =>
-        SkillsStack.filter((skill) => skill.category === actvSect)
+        SkillsStack.filter((skill) => skill.category === actvCategry)
       );
     }
-  }, [actvSect]);
+  }, [actvCategry]);
 
   return (
     <div className="w-full">
@@ -23,9 +23,9 @@ const MySkills = () => {
           <button
             key={btn.title}
             className={`btn-primary text-color-4 ${
-              actvSect === btn.title ? "bg-color-2" : "bg-color-5/50"
+              actvCategry === btn.title ? "bg-color-2" : "bg-color-5/50"
             }`}
-            onClick={() => setActvSect(btn.title)}
+            onClick={() => setActvCategry(btn.title)}
           >
             <div className="flex items-center gap-2 capitalize">
               <btn.icon /> <span>{btn.title}</span>
