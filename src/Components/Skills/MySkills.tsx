@@ -37,7 +37,7 @@ const MySkills = () => {
         {skills.map((skill) => (
           <div
             key={skill.id}
-            className="rounded-md bg-color-5/50 relative p-3 space-y-3 hover:-translate-y-1 transition duration-200"
+            className="rounded-md bg-color-5/50 border-l-2 border-color-2 relative p-3 space-y-3 hover:-translate-y-1 transition duration-200"
           >
             <div className="flex items-end gap-2">
               <img
