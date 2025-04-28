@@ -1,11 +1,9 @@
-import useInViewSection from "../../Hooks/useInViewSection";
 import Heading from "../Heading/Heading";
 import Qualities from "./Qualities";
 
 const About = () => {
-  const ref = useInViewSection("about");
   return (
-    <div ref={ref} id="about-section" className="mt-20 pb-20 px-4">
+    <div id="about" className="mt-20 pb-20 px-4">
       <Heading title="About Me" />
       <div className="w-full mt-16 flex flex-col lg:flex-row gap-10 relative">
         <div className="w-full lg:w-7/12 p-6 bg-color-5/50 rounded-lg">

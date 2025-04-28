@@ -1,11 +1,9 @@
 import { IoMdDownload } from "react-icons/io";
-import useInViewSection from "../../Hooks/useInViewSection";
 import { MdEmail } from "react-icons/md";
 
 const Home = () => {
-  const ref = useInViewSection("home");
   return (
-    <div ref={ref} id="home-section" className="px-4 max-w-6xl">
+    <div id="home" className="px-4 max-w-6xl">
       <div className="w-full flex flex-col justify-center md:flex-row items-center md:justify-between gap-12">
         <div className="flex flex-col gap-5 items-center md:items-start">
           <div className="flex items-center justify-center md:items-start flex-wrap md:flex-col gap-4 text-4xl md:text-5xl lg:text-6xl font-bold">

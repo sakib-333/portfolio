@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Education from "./Components/Education/Education";
@@ -12,6 +12,24 @@ import Navbar from "./Components/Navbar/Navbar";
 
 const App = () => {
   const [actvSection, setActvSection] = useState<NavItem>("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("div[id]");
+
+      sections.forEach((section) => {
+        const sec = section as HTMLElement;
+
+        if (window.scrollY + 200 >= sec.offsetTop) {
+          setActvSection(sec.id as NavItem);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <SectionContext.Provider value={{ actvSection, setActvSection }}>

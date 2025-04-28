@@ -1,12 +1,10 @@
 import { HiAcademicCap } from "react-icons/hi";
-import useInViewSection from "../../Hooks/useInViewSection";
 import Heading from "../Heading/Heading";
 import educationStack from "./educationStack";
 
 const Education = () => {
-  const ref = useInViewSection("education");
   return (
-    <div ref={ref} id="education-section" className="mt-20 pb-20 px-4 mx-auto">
+    <div id="education" className="mt-20 pb-20 px-4 mx-auto">
       <Heading title="Education" />
       <p className="max-w-2xl mt-4 mx-auto text-center text-color-4/80">
         My academic background and educational qualifications that have shaped
