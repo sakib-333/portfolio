@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <div id="contact" className="min-h-screen mt-20 pb-20 px-4 mx-auto">
+    <div id="contact" className="mt-20 pb-20 px-4 mx-auto">
       <Heading title="Contact" />
       <p className="max-w-2xl mt-4 mx-auto text-center text-color-4/80">
         I'm always open to discussing new projects, creative ideas, or
