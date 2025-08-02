@@ -9,6 +9,7 @@ import { SectionContext } from "./Provider/SectionContext";
 import { NavItem } from "./Interfaces/NavItem";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
+import Experience from "./Components/Experience/Experience";
 
 const App = () => {
   const [actvSection, setActvSection] = useState<NavItem>("home");
@@ -39,6 +40,7 @@ const App = () => {
           <div className="pt-32">
             <Home />
             <About />
+            <Experience />
             <Skills />
             <Projects />
             <Education />

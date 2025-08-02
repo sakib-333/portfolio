@@ -4,6 +4,7 @@ import { NavItem } from "../../../Interfaces/NavItem";
 const navItems: NavItem[] = [
   "home",
   "about",
+  "experience",
   "skills",
   "projects",
   "education",
@@ -14,7 +15,10 @@ const Navigation = () => {
   const { actvSection } = useActvSection();
 
   return navItems.map((navItem) => (
-    <li key={navItem} className="hover:scale-105 duration-100 max-w-max">
+    <li
+      key={navItem}
+      className="hover:scale-105 duration-100 max-w-max text-sm"
+    >
       <a
         href={`#${navItem}`}
         className={`capitalize transition-colors duration-300 py-0.5 ${
