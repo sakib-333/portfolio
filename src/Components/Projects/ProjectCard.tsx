@@ -50,7 +50,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <a
             className="text-color-4 text-xs flex items-center gap-1 hover:text-color-2"
             target="_blank"
-            href={project.liveLink}
+            href={project.github}
           >
             <FaGithub /> <span>Github</span>
           </a>
