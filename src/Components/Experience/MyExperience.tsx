@@ -1,4 +1,4 @@
-import experienceStack from "./ExperienceStack";
+import experienceStack from "./experienceStack";
 
 const MyExperience = () => {
   return (

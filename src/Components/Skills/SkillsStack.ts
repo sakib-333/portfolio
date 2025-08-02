@@ -89,6 +89,12 @@ const SkillsStack = [
     title: "VS Code",
     icon: "/vs-code-logo.png",
   },
+  {
+    id: "skill-16",
+    category: "database",
+    title: "MySQL",
+    icon: "/mysql.png",
+  },
 ];
 
 export default SkillsStack;
