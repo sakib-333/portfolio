@@ -1,7 +1,37 @@
 const experienceStack = [
   {
     id: "exper-1",
+    companyName: "Edutechs Limited",
+    companyURL: "https://edutechs.app",
+    position: "Software Developer",
+    duration: "August 2025 - Present",
+    responsibilities: [
+      {
+        id: "resp-1",
+        responsibility:
+          "Built and maintained web applications using React.js, focusing on creating responsive and user-friendly interfaces.",
+      },
+      {
+        id: "resp-2",
+        responsibility:
+          "Implemented Firebase Authentication and Realtime Database for secure user management and real-time data synchronization.",
+      },
+      {
+        id: "resp-3",
+        responsibility:
+          "Designed and optimized database schemas with Supabase, ensuring efficient data handling and scalability.",
+      },
+      {
+        id: "resp-4",
+        responsibility:
+          "Integrated multiple third-party APIs to extend application functionality and improve user experience.",
+      },
+    ],
+  },
+  {
+    id: "exper-2",
     companyName: "TwinForce Solutions Limited",
+    companyURL: "https://twinforce.net",
     position: "Software Engineer Intern",
     duration: "May - July 2025",
     responsibilities: [
