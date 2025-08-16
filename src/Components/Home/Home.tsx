@@ -35,7 +35,7 @@ const Home = () => {
               <span>Resume</span>
             </a>
             <a
-              href="#contact-section"
+              href="#contact"
               className="border border-color-4 btn-primary text-color-4"
             >
               <MdEmail />
