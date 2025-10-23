@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import NavbarSimple from "./components/navbar"
 import AboutSection from "./sections/about-section"
-// import ContactSection from "./sections/contact-section"
+import ContactSection from "./sections/contact-section"
 import EducationSection from "./sections/education-section"
 import ExperianceSection from "./sections/experiance-section"
 import HomeSection from "./sections/home-section"
@@ -80,8 +80,8 @@ function App() {
           <SkillsSection />
           <ProjectsSection />
           <EducationSection />
-          {/*<ContactSection />
-          <Footer handleScroll = {handleScroll} /> */}
+          <ContactSection />
+          {/*<Footer handleScroll = {handleScroll} /> */}
         </div>
         {/* { showScrollTop && (
             <div className="z-1000 right-5 bottom-5 fixed">
