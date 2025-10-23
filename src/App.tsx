@@ -3,7 +3,7 @@ import NavbarSimple from "./components/navbar"
 import AboutSection from "./sections/about-section"
 // import ContactSection from "./sections/contact-section"
 // import EducationSection from "./sections/education-section"
-// import ExperianceSection from "./sections/experiance-section"
+import ExperianceSection from "./sections/experiance-section"
 import HomeSection from "./sections/home-section"
 // import ProjectsSection from "./sections/projects-section"
 // import SkillsSection from "./sections/skills-section"
@@ -76,8 +76,8 @@ function App() {
           />
           
           <AboutSection />
-          {/* <ExperianceSection />
-          <SkillsSection />
+          <ExperianceSection />
+         {/*  <SkillsSection />
           <ProjectsSection />
           <EducationSection />
           <ContactSection />
