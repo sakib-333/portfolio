@@ -7,7 +7,7 @@ import ExperianceSection from "./sections/experiance-section"
 import HomeSection from "./sections/home-section"
 import ProjectsSection from "./sections/projects-section"
 import SkillsSection from "./sections/skills-section"
-// import Footer from "./components/footer"
+import Footer from "./components/footer"
 // import { Button } from "./components/ui/button"
 // import { ArrowUp } from "lucide-react"
 
@@ -81,7 +81,7 @@ function App() {
           <ProjectsSection />
           <EducationSection />
           <ContactSection />
-          {/*<Footer handleScroll = {handleScroll} /> */}
+          <Footer handleScroll = {handleScroll} />
         </div>
         {/* { showScrollTop && (
             <div className="z-1000 right-5 bottom-5 fixed">
