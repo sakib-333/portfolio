@@ -8,8 +8,8 @@ import HomeSection from "./sections/home-section"
 import ProjectsSection from "./sections/projects-section"
 import SkillsSection from "./sections/skills-section"
 import Footer from "./components/footer"
-// import { Button } from "./components/ui/button"
-// import { ArrowUp } from "lucide-react"
+import { Button } from "./components/ui/button"
+import { ArrowUp } from "lucide-react"
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -83,14 +83,14 @@ function App() {
           <ContactSection />
           <Footer handleScroll = {handleScroll} />
         </div>
-        {/* { showScrollTop && (
+        { showScrollTop && (
             <div className="z-1000 right-5 bottom-5 fixed">
             <Button variant="outline" size={"icon"} onClick={() => handleScroll("home-section")}>
               <ArrowUp />
             </Button>
             </div>
           )
-        } */}
+        }
     </div>
   )
 }
