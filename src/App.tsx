@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import NavbarSimple from "./components/navbar"
-// import AboutSection from "./sections/about-section"
+import AboutSection from "./sections/about-section"
 // import ContactSection from "./sections/contact-section"
 // import EducationSection from "./sections/education-section"
 // import ExperianceSection from "./sections/experiance-section"
@@ -74,9 +74,9 @@ function App() {
           <HomeSection 
             handleScroll = {handleScroll}
           />
-          {/* 
+          
           <AboutSection />
-          <ExperianceSection />
+          {/* <ExperianceSection />
           <SkillsSection />
           <ProjectsSection />
           <EducationSection />
