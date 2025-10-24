@@ -27,7 +27,7 @@ const socials = [
 
 function Footer({ handleScroll }: Props) {
   return (
-    <section id="footer-section" className="min-h-[20vh] flex flex-col justify-between py-8">
+    <section id="footer-section" className="min-h-[15vh] flex flex-col justify-between py-8">
       <div className="flex items-center justify-between">
         <p className="text-xl font-semibold cursor-pointer tracking-tight md:text-2xl hover:text-primary transition-all duration-200"
             onClick={()=>handleScroll("home-section")}

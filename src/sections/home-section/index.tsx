@@ -46,7 +46,7 @@ function HomeSection({ handleScroll }: Props) {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end p-1">
         <div className="relative aspect-square w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[440px]">
 
           <div className="absolute inset-0 outline-4 outline-primary rounded-[999px] overflow-hidden md:right-2">
