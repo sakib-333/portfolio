@@ -63,14 +63,14 @@ function App() {
 
 
   return (
-      <div className="bg-primary/20">
-            <div className="container px-5 mx-auto relative">
-                  <NavbarSimple 
-                        open = {open}
-                        handleScroll = {handleScroll}
-                        handleToggle = {handleToggle}
-                        activeSection = {activeSection} 
-                  /> 
+      <div className="bg-primary/20 relative">
+            <NavbarSimple 
+                  open = {open}
+                  handleScroll = {handleScroll}
+                  handleToggle = {handleToggle}
+                  activeSection = {activeSection} 
+            /> 
+            <div className="container px-5 mx-auto">
                   <div className="overflow-hidden">
                         <HomeSection 
                               handleScroll = {handleScroll}
