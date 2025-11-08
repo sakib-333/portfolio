@@ -8,8 +8,8 @@ import HomeSection from "./sections/home-section"
 import ProjectsSection from "./sections/projects-section"
 import SkillsSection from "./sections/skills-section"
 import Footer from "./components/footer"
-// import { Button } from "./components/ui/button"
-// import { ArrowUp } from "lucide-react"
+import { Button } from "./components/ui/button"
+import { ArrowUp } from "lucide-react"
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -63,37 +63,35 @@ function App() {
 
 
   return (
-      <div className="bg-primary/30">
-            <NavbarSimple 
-                  open = {open}
-                  handleScroll = {handleScroll}
-                  handleToggle = {handleToggle}
-                  activeSection = {activeSection} 
-            /> 
-            <div className="container mx-auto relative">
-                  <div className="px-5 overflow-hidden">
-                        <HomeSection 
-                              handleScroll = {handleScroll}
-                        />
-                        
-                        <AboutSection />
-                        <ExperianceSection />
-                        <SkillsSection />
-                        <ProjectsSection />
-                        <EducationSection />
-                        <ContactSection />
-                  </div>
-                  {/* { showScrollTop && (
-                        <div className="z-1000 right-5 bottom-5 fixed">
-                        <Button variant="outline" size={"icon"} onClick={() => handleScroll("home-section")}>
-                        <ArrowUp />
-                        </Button>
-                        </div>
-                        )
-                        } */}
+    <div className="container px-5 mx-auto relative">
+        <NavbarSimple 
+          open = {open}
+          handleScroll = {handleScroll}
+          handleToggle = {handleToggle}
+          activeSection = {activeSection} 
+        /> 
+        <div className="overflow-hidden">
+          <HomeSection 
+            handleScroll = {handleScroll}
+          />
+          
+          <AboutSection />
+          <ExperianceSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <EducationSection />
+          <ContactSection />
+          <Footer handleScroll = {handleScroll} />
+        </div>
+        { showScrollTop && (
+            <div className="z-1000 right-5 bottom-5 fixed">
+            <Button variant="outline" size={"icon"} onClick={() => handleScroll("home-section")}>
+              <ArrowUp />
+            </Button>
             </div>
-            <Footer handleScroll = {handleScroll} />
-      </div>
+          )
+        }
+    </div>
   )
 }
 

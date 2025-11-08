@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with **Vite + React + TypeScript**, styled with **Tailwind CSS** and **shadcn/ui**, and animated using the `motion` package. This repository contains the source for a fast, accessible, and easily-customizable portfolio.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Fast development with Vite
+- React + TypeScript
+- Tailwind CSS for utility-first styling
+- shadcn/ui components for polished UI primitives
+- Motion-based animations for smooth transitions
+- Icon set via `lucide-react`
+- Utility helpers: `clsx`, `class-variance-authority`, and `tailwind-merge`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework:** React (with TypeScript)
+- **Bundler / Dev Server:** Vite
+- **Styling:** Tailwind CSS
+- **UI primitives:** shadcn/ui
+- **Animation:** `motion` package
+- **Icons:** lucide-react
+- **Misc:** clsx, class-variance-authority, tailwind-merge, @radix-ui/react-slot
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting started (local)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- Node.js (recommended **>= 18**)
+- npm, yarn, or pnpm
+
+### Clone
+
+```bash
+# using npm
+git clone git@github.com:sakib-333/portfolio.git
+cd portfolio
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# using npm
+npm install
 ```
+
+### Development
+
+Start the Vite dev server:
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5173 (or the port shown in your terminal).
+
+---
+
+## Animation
+
+- Animations are implemented with the `motion` package. Keep animations subtle and accessible — prefer `prefers-reduced-motion` media queries to respect users who reduce motion.
+
+---
+
+## Demo
+
+[Visit portfolio](https://sakib-333.vercel.app/)
+![Alt text describing the image](/public/webview.png)
+
