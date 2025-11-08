@@ -64,33 +64,33 @@ function App() {
 
   return (
     <div className="container px-5 mx-auto relative">
-        <NavbarSimple 
-          open = {open}
-          handleScroll = {handleScroll}
-          handleToggle = {handleToggle}
-          activeSection = {activeSection} 
-        /> 
-        <div className="overflow-hidden">
-          <HomeSection 
+      <NavbarSimple 
+            open = {open}
             handleScroll = {handleScroll}
-          />
-          
-          <AboutSection />
-          <ExperianceSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <EducationSection />
-          <ContactSection />
-          <Footer handleScroll = {handleScroll} />
-        </div>
-        { showScrollTop && (
-            <div className="z-1000 right-5 bottom-5 fixed">
-            <Button variant="outline" size={"icon"} onClick={() => handleScroll("home-section")}>
-              <ArrowUp />
-            </Button>
-            </div>
-          )
-        }
+            handleToggle = {handleToggle}
+            activeSection = {activeSection} 
+      /> 
+      <div className="overflow-hidden">
+            <HomeSection 
+                  handleScroll = {handleScroll}
+            />
+            
+            <AboutSection />
+            <ExperianceSection />
+            <SkillsSection />
+            <ProjectsSection />
+            <EducationSection />
+            <ContactSection />
+            <Footer handleScroll = {handleScroll} />
+      </div>
+      { showScrollTop && (
+                  <div className="z-1000 right-5 bottom-5 fixed">
+                        <Button variant="outline" size={"icon"} onClick={() => handleScroll("home-section")}>
+                              <ArrowUp />
+                        </Button>
+                  </div>
+            )
+      }
     </div>
   )
 }
