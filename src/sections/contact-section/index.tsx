@@ -30,7 +30,8 @@ const contacts = [
 
 function ContactSection() {
   return (
-    <Section id="contact-section" className="bg-primary/20">
+//     <Section id="contact-section" className="bg-primary/20">
+<Section id="contact-section">
       <SectionHeader 
        heading="Contact"
        title="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision."
