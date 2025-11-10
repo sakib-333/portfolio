@@ -35,11 +35,11 @@ function EducationCard({ education, length }: Props) {
           {/* Center Timeline */}
           <div className="hidden lg:flex flex-col items-center">
             {/* <div className="w-[2px] flex-1 border-2 border-background" /> */}
-            <div className={`w-0.5 flex-1 border-2`} style={{borderColor: indx ? "#ffffffe6":"#0a0a0a"}} />
+            <div className={`w-0.5 flex-1 border-2`} style={{borderColor: indx ? "#ffffffe6":"#081c13"}} />
             <div className="w-8 h-8 p-1 rounded-full border-2 border-primary flex items-center justify-center">
                 <GraduationCap size={24} />
             </div>
-            <div className={`w-0.5 flex-1 border-2`} style={{borderColor: indx === length-1 ? "#0a0a0a":"#ffffffe6"}} />
+            <div className={`w-0.5 flex-1 border-2`} style={{borderColor: indx === length-1 ? "#081c13":"#ffffffe6"}} />
           </div> 
           <div className="flex-none lg:flex-1" />
         </div>
