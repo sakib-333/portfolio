@@ -82,7 +82,6 @@ function App() {
                         <ProjectsSection />
                         <EducationSection />
                         <ContactSection />
-                        <Footer handleScroll = {handleScroll} />
                   </div>
                   { showScrollTop && (
                               <div className="z-1000 right-5 bottom-5 fixed">
@@ -93,6 +92,7 @@ function App() {
                         )
                   }
             </div>
+            <Footer handleScroll = {handleScroll} />
       </div>
   )
 }

@@ -27,24 +27,26 @@ const socials = [
 
 function Footer({ handleScroll }: Props) {
   return (
-    <section id="footer-section" className="min-h-[15vh] flex flex-col justify-between py-8">
-      <div className="flex items-center justify-between">
-        <p className="text-xl font-semibold cursor-pointer tracking-tight md:text-2xl hover:text-primary transition-all duration-200"
-            onClick={()=>handleScroll("home-section")}
-          >
-            Sakib
-        </p>
-        <div className="flex items-center gap-4">
-          {
-            socials.map(s => (
-              <a key={s.id} href={s.url} target="_blank">
-                <img src={s.icon} alt="icon" className="w-6 h-6 hover:text-white" />
-              </a>
-            ))
-          }
-        </div>
+    <section id="footer-section" className="mx-auto min-h-[15vh] flex flex-col justify-between py-8 bg-black">
+      <div className="container mx-auto">
+            <div className="flex items-center justify-between">
+            <p className="text-xl font-semibold cursor-pointer tracking-tight md:text-2xl hover:text-primary transition-all duration-200"
+                  onClick={()=>handleScroll("home-section")}
+            >
+                  Sakib
+            </p>
+            <div className="flex items-center gap-4">
+            {
+                  socials.map(s => (
+                  <a key={s.id} href={s.url} target="_blank">
+                  <img src={s.icon} alt="icon" className="w-6 h-6 hover:text-white" />
+                  </a>
+                  ))
+            }
+            </div>
+            </div>
+            <p className="text-[10px] text-center">Copyright &copy; 2025</p>    
       </div>
-      <p className="text-[10px] text-center">Copyright &copy; 2025</p>    
     </section>
   )
 }
