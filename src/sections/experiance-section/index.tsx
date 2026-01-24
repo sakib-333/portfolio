@@ -24,7 +24,7 @@ const experianceData = [
     companyName: "Edutechs Limited",
     companySite: "https://edutechs.app/welcome",
     position: "Software Developer Intern",
-    duration: "August 2025 - Present",
+    duration: "August 2025 - November 2025",
     workedWith: [
       "Built and maintained web applications using React.js, focusing on creating responsive and user-friendly interfaces.",
       "Implemented Firebase Authentication and Realtime Database for secure user management and real-time data synchronization.",
