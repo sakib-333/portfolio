@@ -4,6 +4,21 @@ import SectionHeader from "@/components/section-header"
 
 const experianceData = [
   {
+    id: "experiance-3",
+    companyLogo: "/companies/edutechs.png",
+    companyName: "Edutechs Limited",
+    companySite: "https://edutechs.app/welcome",
+    position: "Junior Software Developer",
+    duration: "November 2025 - Present",
+    workedWith: [
+      "Designed, implemented, and maintained secure user authentication and real-time data synchronization using Firebase Authentication and Realtime Database.",
+      "Delivered end-to-end feature development from concept to production, including seamless frontend and backend integration.",
+      "Identified, debugged, and resolved application issues while optimizing performance to enhance responsiveness, reliability, and scalability.",
+      "Collaborated cross-functionally with product managers, designers, and QA teams; integrated and maintained third-party APIs (payments, notifications, analytics) and ensured quality through structured testing and regression validation."
+    ]
+
+  },
+  {
     id: "experiance-2",
     companyLogo: "/companies/edutechs.png",
     companyName: "Edutechs Limited",
@@ -36,7 +51,7 @@ const experianceData = [
 function ExperianceSection() {
   return (
     <Section id="experiance-section">
-      <SectionHeader 
+      <SectionHeader
         heading="Experiance"
         title="A summary of my professional experiences that have enhanced my practical skills, problem-solving abilities, and industry knowledge."
       />
