@@ -18,7 +18,7 @@ const educations = [
     indx: 1,
   },
   {
-    id: "education-2",
+    id: "education-3",
     degree: "Secondary School Certificate(SSC)",
     institute: "Kotalipara Public Institution",
     year: 2015,
