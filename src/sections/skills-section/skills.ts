@@ -108,6 +108,11 @@ const skills = [
     title: "VS Code",
     icon: "/skills/vs-code-logo.png",
   },
+  {
+    category: "tools",
+    title: "Redux",
+    icon: "/skills/redux-logo.png",
+  },
   // tools ends
 ];
 
