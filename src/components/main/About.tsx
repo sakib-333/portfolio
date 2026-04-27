@@ -1,10 +1,37 @@
+import { motion } from "framer-motion";
+
 const About = () => {
     return (
-        <section id="about" className="min-h-screen flex items-center px-6 md:px-12 py-20">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <motion.section
+            id="about"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="min-h-screen flex flex-col justify-center items-center px-6 md:px-12 relative"
+        >
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
 
                 {/* Left */}
                 <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 mb-4">
+                        <div className="relative flex items-center justify-center">
+                            <span className="w-2 h-2 rounded-full bg-primary-container relative z-10"></span>
+                            <motion.span
+                                animate={{
+                                    scale: [1, 2.5],
+                                    opacity: [0.9, 0.1]
+                                }}
+                                transition={{
+                                    duration: 1.5,
+                                    repeat: Infinity,
+                                    ease: "easeOut"
+                                }}
+                                className="absolute w-2 h-2 rounded-full bg-primary-container"
+                            ></motion.span>
+                        </div>
+                        <span className="text-label-sm text-secondary tracking-widest uppercase">Available for work</span>
+                    </div>
+
                     <h1 className="text-5xl font-bold text-white">
                         Architecting Scalable <span className="text-primary">MERN</span> Apps
                     </h1>
@@ -14,9 +41,9 @@ const About = () => {
                     </p>
 
                     <div className="mt-6 flex gap-4">
-                        <a href="#projects" className="bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2">
+                        <a href="#projects" className="group bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,98,57,0.3)]">
                             <span>View My Work</span>
-                            <span className="material-symbols-outlined">
+                            <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">
                                 arrow_forward
                             </span>
                         </a>
@@ -31,6 +58,24 @@ const About = () => {
                 <div className="flex justify-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+
+                        <motion.div
+                            animate={{
+                                y: [0, -8, 0],
+                                rotate: [0, 5, -5, 0]
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className="absolute -top-6 -left-6 z-20 bg-zinc-900 border border-zinc-800 p-4 rounded-2xl shadow-2xl backdrop-blur-sm"
+                        >
+                            <span className="material-symbols-outlined text-3xl text-primary">
+                                eda
+                            </span>
+                        </motion.div>
+
                         <img
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvjh2cZN4wM2H7pqLdFJ-9a3KQdd5uZmGbqntnx3Iv7XcxaBdKgtVliwU9m0d_FN3MuJrTlUA4LyEyPEO3Sp3fD67g8fO6nE2zrVHuH_BF1K_qmsHD74ANfFJhHldETFua9Y2ChnVeLRxmO0VTGYWUVocICez0zV0er6jcll_iZivVGtcDfm6BZ6CnNkcIqe-G75WAVVoFfbIu2R73tQSOnxgK1kpCmaf9XhezQnf3jkyZ5MrrWvm2GOnb-x_LXKbghIdW9uIy"
                             alt="MERN Stack Developer"
@@ -40,7 +85,7 @@ const About = () => {
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     );
 };
 
