@@ -26,7 +26,12 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 font-space-grotesk tracking-tight">
             <div className="flex justify-between items-center h-16 px-6 md:px-12 max-w-7xl mx-auto">
-                <span className="text-xl font-bold text-white tracking-tighter">Sakib</span>
+                <span className="text-2xl font-bold text-white tracking-tighter"
+                    style={{
+                        fontFamily: "'Playwrite NO', cursive",
+                        letterSpacing: "0.15em"
+                    }}
+                >Sakib</span>
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-4">
