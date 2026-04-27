@@ -18,13 +18,14 @@ const About = () => {
                             <span className="w-2 h-2 rounded-full bg-primary-container relative z-10"></span>
                             <motion.span
                                 animate={{
-                                    scale: [1, 2.5],
-                                    opacity: [0.9, 0.1]
+                                    scale: [1, 2.5, 1],
+                                    opacity: [0.9, 0],
                                 }}
                                 transition={{
                                     duration: 1.5,
                                     repeat: Infinity,
-                                    ease: "easeOut"
+                                    ease: "easeOut",
+                                    delay: 1.5,
                                 }}
                                 className="absolute w-2 h-2 rounded-full bg-primary-container"
                             ></motion.span>
@@ -58,24 +59,6 @@ const About = () => {
                 <div className="flex justify-center">
                     <div className="relative">
                         <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
-
-                        <motion.div
-                            animate={{
-                                y: [0, -8, 0],
-                                rotate: [0, 5, -5, 0]
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                            className="absolute -top-6 -left-6 z-20 bg-zinc-900 border border-zinc-800 p-4 rounded-2xl shadow-2xl backdrop-blur-sm"
-                        >
-                            <span className="material-symbols-outlined text-3xl text-primary">
-                                eda
-                            </span>
-                        </motion.div>
-
                         <img
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvjh2cZN4wM2H7pqLdFJ-9a3KQdd5uZmGbqntnx3Iv7XcxaBdKgtVliwU9m0d_FN3MuJrTlUA4LyEyPEO3Sp3fD67g8fO6nE2zrVHuH_BF1K_qmsHD74ANfFJhHldETFua9Y2ChnVeLRxmO0VTGYWUVocICez0zV0er6jcll_iZivVGtcDfm6BZ6CnNkcIqe-G75WAVVoFfbIu2R73tQSOnxgK1kpCmaf9XhezQnf3jkyZ5MrrWvm2GOnb-x_LXKbghIdW9uIy"
                             alt="MERN Stack Developer"
