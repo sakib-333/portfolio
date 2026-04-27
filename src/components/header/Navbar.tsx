@@ -1,7 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
 
     const navLinks = [
         { name: 'About', href: '#about' },
@@ -58,18 +69,22 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Navigation */}
-            <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="bg-zinc-950 border-b border-zinc-800 px-6 py-6 flex flex-col gap-4">
-                    {navLinks.map((link) => (
+            <div className={`fixed inset-0 top-16 w-full h-[calc(100vh-4rem)] bg-zinc-950/98 backdrop-blur-xl md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+                <div className="flex flex-col items-center justify-center h-full gap-8 px-6 overflow-scroll">
+                    {navLinks.map((link, index) => (
                         <a
                             key={link.name}
-                            className="text-zinc-400 hover:text-white transition-colors text-lg font-medium"
+                            className="text-zinc-400 hover:text-white transition-all text-2xl font-medium tracking-tight hover:scale-110 active:scale-95"
                             href={link.href}
+                            style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}
                         </a>
                     ))}
+                    <button className="mt-4 bg-primary-container text-white px-8 py-3 rounded-lg font-semibold active:scale-95 transition-transform duration-150 hover:shadow-[0_0_20px_rgba(0,98,57,0.5)] cursor-pointer">
+                        Resume
+                    </button>
                 </div>
             </div>
         </nav>
