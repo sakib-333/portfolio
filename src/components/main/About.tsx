@@ -1,6 +1,19 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+
+
+const roles = ["React Developer", "Web Developer", "React Native Developer"];
 
 const About = () => {
+    const [roleIndex, setRoleIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <motion.section
             id="about"
@@ -64,6 +77,21 @@ const About = () => {
                             alt="MERN Stack Developer"
                             className="rounded-2xl w-80 h-96 object-cover relative z-10 border border-zinc-800"
                         />
+                        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 w-max py-2">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={roles[roleIndex]}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-primary font-medium"
+                                >
+                                    {roles[roleIndex]}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
                     </div>
                 </div>
 
