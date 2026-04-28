@@ -1,6 +1,8 @@
 import Navbar from "./components/header/Navbar";
 import About from "./components/main/About";
 import Experience from "./components/main/Experience";
+import Contact from "./components/main/Contact";
+
 
 const App = () => {
   return (
@@ -9,6 +11,8 @@ const App = () => {
       <main className="w-full mx-auto">
         <About />
         <Experience />
+        <Contact />
+
       </main>
     </div>
   )
