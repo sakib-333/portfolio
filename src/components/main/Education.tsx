@@ -3,7 +3,7 @@ const Education = () => {
         <section className="py-xl bg-zinc-950/30" id="education">
             <div className="max-w-7xl mx-auto px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-2xl text-white mb-4">Academic Foundation</h2>
+                    <h2 className="text-h2 font-h2 text-white mb-4">Academic Foundation</h2>
                     <p className="text-on-surface-variant max-w-2xl mx-auto">The theoretical roots of my practical engineering expertise.</p>
                 </div>
                 <div className="max-w-3xl mx-auto">

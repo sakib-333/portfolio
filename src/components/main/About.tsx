@@ -1,102 +1,45 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-
-
-const roles = ["React Developer", "Web Developer", "React Native Developer"];
 
 const About = () => {
-    const [roleIndex, setRoleIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setRoleIndex((prev) => (prev + 1) % roles.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-
     return (
-        <motion.section
-            id="about"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="min-h-screen flex flex-col justify-center items-center px-6 md:px-12 relative"
-        >
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
-
-                {/* Left */}
-                <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 mb-4">
-                        <div className="relative flex items-center justify-center">
-                            <span className="w-2 h-2 rounded-full bg-primary-container relative z-10"></span>
-                            <motion.span
-                                animate={{
-                                    scale: [1, 2.5, 1],
-                                    opacity: [0.9, 0],
-                                }}
-                                transition={{
-                                    duration: 1.5,
-                                    repeat: Infinity,
-                                    ease: "easeOut",
-                                    delay: 1.5,
-                                }}
-                                className="absolute w-2 h-2 rounded-full bg-primary-container"
-                            ></motion.span>
+        <section className="py-xl bg-background" id="about">
+            <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div className="order-2 md:order-1">
+                    <div className="bg-zinc-900 border border-zinc-800 p-2 rounded-2xl rotate-3 shadow-2xl">
+                        <div className="bg-zinc-950 p-6 rounded-xl space-y-4 font-mono text-xs text-zinc-500">
+                            <div className="flex gap-2"><span className="text-[#2ECC71]">const</span> <span className="text-secondary">philosophy</span> = {`{`}</div>
+                            <div className="pl-4">cleanCode: <span className="text-primary-container">true</span>,</div>
+                            <div className="pl-4">rigor: <span className="text-primary-container">"absolute"</span>,</div>
+                            <div className="pl-4">userCentric: <span className="text-primary-container">true</span>,</div>
+                            <div className="pl-4">performance: <span className="text-primary-container">"optimized"</span></div>
+                            <div>{`};`}</div>
+                            <div className="pt-4 text-zinc-600">// I write code that humans can read</div>
+                            <div className="text-zinc-600">// and machines can run efficiently.</div>
                         </div>
-                        <span className="text-label-sm text-secondary tracking-widest uppercase">Available for work</span>
-                    </div>
-
-                    <h1 className="text-5xl font-bold text-white">
-                        Architecting Scalable <span className="text-primary">MERN</span> Apps
-                    </h1>
-
-                    <p className="mt-4 text-zinc-400 text-justify">
-                        Motivated frontend developer with a strong track record of successfully completing various projects. Proficient in various programming languages and technologies, including C, C++, and web development technologies (HTML, CSS, JavaScript, TypeScript, and React). Strong problem-solving abilities and a solid understanding of frontend development principles. Committed to continuous learning and delivering high-quality solutions. Ready to contribute expertise to new challenges.
-                    </p>
-
-                    <div className="mt-6 flex gap-4">
-                        <a href="#projects" className="group bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,98,57,0.3)]">
-                            <span>View My Work</span>
-                            <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">
-                                arrow_forward
-                            </span>
-                        </a>
-
-                        <a href="#contact" className="border px-6 py-3 rounded-lg text-white border-zinc-700 hover:bg-zinc-900 transition-colors">
-                            Contact
-                        </a>
                     </div>
                 </div>
-
-                {/* Right */}
-                <div className="flex justify-center">
-                    <div className="relative">
-                        <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
-                        <img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvjh2cZN4wM2H7pqLdFJ-9a3KQdd5uZmGbqntnx3Iv7XcxaBdKgtVliwU9m0d_FN3MuJrTlUA4LyEyPEO3Sp3fD67g8fO6nE2zrVHuH_BF1K_qmsHD74ANfFJhHldETFua9Y2ChnVeLRxmO0VTGYWUVocICez0zV0er6jcll_iZivVGtcDfm6BZ6CnNkcIqe-G75WAVVoFfbIu2R73tQSOnxgK1kpCmaf9XhezQnf3jkyZ5MrrWvm2GOnb-x_LXKbghIdW9uIy"
-                            alt="MERN Stack Developer"
-                            className="rounded-2xl w-80 h-96 object-cover relative z-10 border border-zinc-800"
-                        />
-                        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 w-max py-2">
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={roles[roleIndex]}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="text-primary font-medium"
-                                >
-                                    {roles[roleIndex]}
-                                </motion.div>
-                            </AnimatePresence>
+                <div className="space-y-6 order-1 md:order-2">
+                    <h2 className="font-h2 text-h2 text-white">Engineering with <span className="text-primary">Intent</span>.</h2>
+                    <div className="space-y-4 text-body-lg text-on-surface-variant">
+                        <p>
+                            I believe that web development is more than just stacking libraries. It's about structural integrity, performance optimization, and creating intuitive digital paths for users to follow.
+                        </p>
+                        <p>
+                            With over 5 years of experience across the MERN ecosystem, I've transitioned from building simple landing pages to architecting complex enterprise systems that handle thousands of concurrent requests without breaking a sweat.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-8 pt-4">
+                        <div>
+                            <p className="text-h2 font-bold text-white mb-1">45+</p>
+                            <p className="text-sm text-zinc-500 uppercase tracking-widest">Projects Shipped</p>
                         </div>
-
+                        <div>
+                            <p className="text-h2 font-bold text-white mb-1">98%</p>
+                            <p className="text-sm text-zinc-500 uppercase tracking-widest">Code Coverage</p>
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </motion.section>
+        </section>
     );
 };
 
