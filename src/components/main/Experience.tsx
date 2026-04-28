@@ -4,31 +4,48 @@ import { motion } from 'framer-motion';
 interface ExperienceItem {
     role: string;
     company: string;
+    companyWebsite: string;
     period: string;
     description: string[];
 }
 
 const experiences: ExperienceItem[] = [
     {
-        role: "Senior MERN Developer",
-        company: "TechFlow Solutions",
-        period: "2021 — Present",
+        role: "Junior Software Developer",
+        company: "Edutechs Limited",
+        companyWebsite: "https://edutechs.app/welcome",
+        period: "November 2025 - Present",
         description: [
-            "Led a team of 5 developers in migrating a legacy PHP monolith to a modern microservices architecture using Node.js and MongoDB.",
-            "Optimized database queries and implemented Redis caching, resulting in a 40% reduction in API response times.",
-            "Architected a real-time analytics dashboard using Socket.io and React, serving over 10k concurrent users."
+            "Built and maintained secure authentication and real-time sync using Firebase.",
+            "Delivered end-to-end features with smooth frontend-backend integration.",
+            "Debugged issues and optimized performance for better speed and reliability.",
+            "Worked with cross-functional teams and integrated third-party APIs with proper testing."
         ]
     },
     {
-        role: "Full Stack Engineer",
-        company: "InnoVate Systems",
-        period: "2018 — 2021",
+        role: "Software Developer Intern",
+        company: "Edutechs Limited",
+        companyWebsite: "https://edutechs.app/welcome",
+        period: "August 2025 - November 2025",
         description: [
-            "Developed and maintained several React-based SPAs with Redux for state management and complex data flows.",
-            "Implemented end-to-end testing suites using Cypress, increasing feature deployment stability by 60%.",
-            "Designed and integrated secure RESTful APIs with Express and JWT authentication."
+            "Built and maintained web applications using React.js, focusing on creating responsive and user-friendly interfaces.",
+            "Implemented Firebase Authentication and Realtime Database for secure user management and real-time data synchronization.",
+            "Designed and optimized database schemas with Supabase, ensuring efficient data handling and scalability.",
+            "Integrated multiple third-party APIs to extend application functionality and improve user experience."
         ]
-    }
+    },
+    {
+        role: "Software Developer Intern",
+        company: "TwinForce Solutions Limited",
+        companyWebsite: "https://twinforce.net",
+        period: "May 2025 - July 2025",
+        description: [
+            "Completed a CRM-focused internship using the Salesforce platform with hands-on real-world experience.",
+            "Worked with core Salesforce Admin features including object configuration, permission sets, page layouts, and automation tools.",
+            "Gained foundational knowledge in Apex, Lightning Web Components (LWC), and Flow Builder.",
+            "Developed and tested custom triggers and components to automate processes and improve user experience."
+        ]
+    },
 ];
 
 const Experience: React.FC = () => {
@@ -48,7 +65,7 @@ const Experience: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-h2 text-4xl md:text-5xl text-white mb-4">
+                    <h2 className="font-h2 text-h2 text-white mb-4">
                         Professional <span className="text-primary">Experience</span>
                     </h2>
                     <p className="text-on-surface-variant max-w-2xl mx-auto text-lg">
@@ -64,7 +81,12 @@ const Experience: React.FC = () => {
                         {experiences.map((exp, index) => (
                             <div key={index} className="relative">
                                 {/* Timeline Dot */}
-                                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 w-4 h-4 rounded-full bg-primary-container border-4 border-background z-10 shadow-[0_0_10px_rgba(var(--color-primary-rgb),0.3)]"></div>
+                                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 rounded-full border-4 border-background bg-background z-10">
+                                    <span className="material-symbols-outlined filled-icon text-4xl text-primary-container">
+                                        work_history
+                                    </span>
+                                </div>
+
 
                                 <motion.div
                                     initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
@@ -78,7 +100,9 @@ const Experience: React.FC = () => {
                                         <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
                                             {exp.role}
                                         </h3>
-                                        <p className="text-primary font-semibold mb-2">{exp.company}</p>
+                                        <a className='w-fit' href={exp.companyWebsite} target="_blank" rel="noopener noreferrer">
+                                            <p className="text-primary font-semibold mb-2 hover:text-primary-container hover:underline transition-colors">{exp.company}</p>
+                                        </a>
                                         <p className="text-zinc-500 font-mono text-sm uppercase tracking-wider">{exp.period}</p>
                                     </div>
 
