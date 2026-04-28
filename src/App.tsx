@@ -4,6 +4,7 @@ import Experience from "./components/main/Experience";
 import Contact from "./components/main/Contact";
 import Education from "./components/main/Education";
 import Home from "./components/main/Home";
+import Skills from "./components/main/Skills";
 
 
 
@@ -14,6 +15,7 @@ const App = () => {
       <main className="w-full mx-auto">
         <Home />
         <Experience />
+        <Skills />
         <Education />
         <About />
         <Contact />
