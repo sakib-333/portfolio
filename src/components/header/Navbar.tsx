@@ -39,7 +39,7 @@ const Navbar = () => {
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
-                            className="text-zinc-400 hover:text-white hover:bg-zinc-900/50 text-sm rounded-md px-2 py-1 transition-all"
+                            className="text-zinc-400 hover:text-white hover:bg-zinc-900/50 text-xs rounded-md px-1 py-0.5 transition-all"
                             href={link.href}
                         >
                             {link.name}
@@ -48,12 +48,16 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <button className="bg-primary-container text-white px-6 py-2 rounded-lg font-semibold active:scale-95 transition-transform duration-150 hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] cursor-pointer flex items-center">
+                    <a 
+                        href="/resume_frontend_developer.pdf" 
+                        download 
+                        className="bg-primary-container text-white px-6 py-2 rounded-lg font-semibold active:scale-95 transition-transform duration-150 hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] cursor-pointer flex items-center"
+                    >
                         <span className="material-symbols-outlined">
                             download
                         </span>
                         <span>Resume</span>
-                    </button>
+                    </a>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -91,9 +95,6 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <button className="mt-4 bg-primary-container text-white px-8 py-3 rounded-lg font-semibold active:scale-95 transition-transform duration-150 hover:shadow-[0_0_20px_rgba(0,98,57,0.5)] cursor-pointer">
-                        Resume
-                    </button>
                 </div>
             </div>
         </nav>
