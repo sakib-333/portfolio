@@ -48,8 +48,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <button className="bg-primary-container text-white px-6 py-2 rounded-lg font-semibold active:scale-95 transition-transform duration-150 hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] cursor-pointer">
-                        Resume
+                    <button className="bg-primary-container text-white px-6 py-2 rounded-lg font-semibold active:scale-95 transition-transform duration-150 hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] cursor-pointer flex items-center">
+                        <span className="material-symbols-outlined">
+                            download
+                        </span>
+                        <span>Resume</span>
                     </button>
 
                     {/* Mobile Menu Button */}
