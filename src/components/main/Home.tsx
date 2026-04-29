@@ -73,7 +73,7 @@ const Home = () => {
                     <div className="relative">
                         <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
                         <img
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvjh2cZN4wM2H7pqLdFJ-9a3KQdd5uZmGbqntnx3Iv7XcxaBdKgtVliwU9m0d_FN3MuJrTlUA4LyEyPEO3Sp3fD67g8fO6nE2zrVHuH_BF1K_qmsHD74ANfFJhHldETFua9Y2ChnVeLRxmO0VTGYWUVocICez0zV0er6jcll_iZivVGtcDfm6BZ6CnNkcIqe-G75WAVVoFfbIu2R73tQSOnxgK1kpCmaf9XhezQnf3jkyZ5MrrWvm2GOnb-x_LXKbghIdW9uIy"
+                            src="/hero-section-image.png"
                             alt="MERN Stack Developer"
                             className="rounded-2xl w-80 h-96 object-cover relative z-10 border border-zinc-800"
                         />
