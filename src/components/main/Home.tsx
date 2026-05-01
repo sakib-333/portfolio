@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 
 const roles = ["React Developer", "Web Developer", "React Native Developer"];
 
-const Home = () => {
+interface HomeProps {
+    handleScroll?: (sectionId: string) => void;
+}
+
+const Home = ({ handleScroll }: HomeProps) => {
     const [roleIndex, setRoleIndex] = useState(0);
 
     useEffect(() => {
@@ -55,16 +59,22 @@ const Home = () => {
                     </p>
 
                     <div className="mt-6 flex gap-4">
-                        <a href="#projects" className="group bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,98,57,0.3)]">
+                        <button 
+                            onClick={() => handleScroll?.('projects')}
+                            className="group bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,98,57,0.3)] cursor-pointer"
+                        >
                             <span>View My Work</span>
                             <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">
                                 arrow_forward
                             </span>
-                        </a>
+                        </button>
 
-                        <a href="#contact" className="border px-6 py-3 rounded-lg text-white border-zinc-700 hover:bg-zinc-900 transition-colors">
+                        <button 
+                            onClick={() => handleScroll?.('contact')}
+                            className="border px-6 py-3 rounded-lg text-white border-zinc-700 hover:bg-zinc-900 transition-colors cursor-pointer"
+                        >
                             Contact
-                        </a>
+                        </button>
                     </div>
                 </div>
 

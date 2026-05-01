@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 
 interface NavbarProps {
     activeSection?: string;
+    handleScroll: (sectionId: string) => void;
 }
 
-const Navbar = ({ activeSection }: NavbarProps) => {
+const Navbar = ({ activeSection, handleScroll }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -19,41 +20,42 @@ const Navbar = ({ activeSection }: NavbarProps) => {
     }, [isOpen]);
 
     const navLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'Experiences', href: '#experiences' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Education', href: '#education' },
-        { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Home', id: 'home' },
+        { name: 'Experiences', id: 'experiences' },
+        { name: 'Skills', id: 'skills' },
+        { name: 'Projects', id: 'projects' },
+        { name: 'Education', id: 'education' },
+        { name: 'About', id: 'about' },
+        { name: 'Contact', id: 'contact' },
     ];
 
     return (
         <nav className="fixed top-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 font-space-grotesk tracking-tight">
             <div className="flex justify-between items-center h-16 px-6 md:px-12 max-w-7xl mx-auto">
-                <span className="text-2xl font-bold text-white tracking-tighter"
+                <span className="text-2xl font-bold text-white tracking-tighter cursor-pointer"
                     style={{
                         fontFamily: "'Playwrite NO', cursive",
                         letterSpacing: "0.15em"
                     }}
+                    onClick={() => handleScroll('home')}
                 >Sakib</span>
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-3">
                     {navLinks.map((link) => {
-                        const isActive = link.href.replace('#', '') === activeSection;
+                        const isActive = link.id === activeSection;
                         return (
-                            <a
+                            <button
                                 key={link.name}
-                                className={`text-xs rounded-md px-2 py-1 transition-all ${
+                                className={`text-xs rounded-md px-2 py-1 transition-all cursor-pointer ${
                                     isActive 
                                     ? "text-primary bg-primary-container/50" 
                                     : "text-zinc-400 hover:text-white hover:bg-zinc-900/50"
                                 }`}
-                                href={link.href}
+                                onClick={() => handleScroll(link.id)}
                             >
                                 {link.name}
-                            </a>
+                            </button>
                         );
                     })}
                 </div>
@@ -96,19 +98,21 @@ const Navbar = ({ activeSection }: NavbarProps) => {
             <div className={`fixed inset-0 top-16 w-full h-[calc(100vh-4rem)] bg-zinc-950/98 backdrop-blur-xl md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
                 <div className="flex flex-col items-center justify-center h-full gap-8 px-6 overflow-scroll">
                     {navLinks.map((link, index) => {
-                        const isActive = link.href.replace('#', '') === activeSection;
+                        const isActive = link.id === activeSection;
                         return (
-                            <a
+                            <button
                                 key={link.name}
-                                className={`transition-all text-2xl font-medium tracking-tight hover:scale-110 active:scale-95 ${
+                                className={`transition-all text-2xl font-medium tracking-tight hover:scale-110 active:scale-95 cursor-pointer ${
                                     isActive ? "text-white scale-110 font-bold" : "text-zinc-400 hover:text-white"
                                 }`}
-                                href={link.href}
                                 style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
-                                onClick={() => setIsOpen(false)}
+                                onClick={() => {
+                                    handleScroll(link.id);
+                                    setIsOpen(false);
+                                }}
                             >
                                 {link.name}
-                            </a>
+                            </button>
                         );
                     })}
                 </div>
