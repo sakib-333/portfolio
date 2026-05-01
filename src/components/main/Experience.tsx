@@ -79,10 +79,11 @@ const Experience: React.FC = () => {
 
                     <div className="space-y-12">
                         {experiences.map((exp, index) => (
-                            <div key={index} className="relative">
+                            <div key={index} className="relative group">
                                 {/* Timeline Dot */}
-                                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 rounded-full border-4 border-background bg-background z-10">
-                                    <span className="material-symbols-outlined filled-icon text-4xl text-primary-container">
+                                <div className="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-0 w-12 h-12 rounded-full bg-surface-container-high border-2 border-surface-variant shadow-xl z-10 group-hover:border-primary/50 group-hover:shadow-primary/10 transition-all duration-500">
+                                    <div className="absolute inset-0 rounded-full bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <span className="material-symbols-outlined filled-icon text-2xl text-primary transition-transform duration-500">
                                         work_history
                                     </span>
                                 </div>
