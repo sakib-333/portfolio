@@ -26,7 +26,7 @@ const Home = ({ handleScroll }: HomeProps) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="min-h-screen flex flex-col justify-center items-center px-6 md:px-12 relative"
         >
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full pt-24 md:pt-0">
 
                 {/* Left */}
                 <div>
