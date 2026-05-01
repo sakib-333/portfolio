@@ -1,13 +1,28 @@
+import { motion } from 'framer-motion';
+
 const Education = () => {
     return (
         <section className="py-xl bg-linear-to-b from-background to-zinc-950/50" id="education">
             <div className="max-w-7xl mx-auto px-8">
-                <div className="text-center mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
                     <h2 className="font-h2 text-h2 text-white mb-4">Academic Foundation</h2>
                     <p className="text-on-surface-variant max-w-2xl mx-auto">The theoretical roots of my practical engineering expertise.</p>
-                </div>
+                </motion.div>
+
                 <div className="max-w-5xl mx-auto">
-                    <div className="bg-surface-container/40 backdrop-blur-sm border border-zinc-800/50 rounded-3xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="bg-surface-container/40 backdrop-blur-sm border border-zinc-800/50 rounded-3xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500"
+                    >
                         <div className="absolute -right-16 -top-16 w-64 h-64 bg-primary/5 rounded-full blur-[80px] group-hover:bg-primary/10 transition-colors"></div>
                         <div className="p-8 md:p-12 relative z-10">
                             <div className="flex flex-col md:flex-row gap-8 md:gap-12">
@@ -65,7 +80,7 @@ const Education = () => {
                         </div>
                         {/* Bottom Accent Line */}
                         <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
