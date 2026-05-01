@@ -1,10 +1,18 @@
+import { motion } from 'framer-motion';
+
 const About = () => {
     return (
         <section className="py-xl bg-background" id="about">
             <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
                 {/* Code Philosophy Card */}
-                <div className="order-2 md:order-1">
+                <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="order-2 md:order-1"
+                >
                     <div className="bg-zinc-900 border border-zinc-800 p-2 rounded-2xl rotate-3 shadow-2xl">
                         <div className="bg-zinc-950 p-6 rounded-xl space-y-4 font-mono text-xs text-zinc-500">
                             <div className="flex gap-2">
@@ -39,10 +47,16 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Content */}
-                <div className="space-y-6 order-1 md:order-2">
+                <motion.div 
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="space-y-6 order-1 md:order-2"
+                >
 
                     <h2 className="font-h2 text-h2 text-white">
                         Building Modern Applications with <span className="text-primary">Purpose</span>.
@@ -67,25 +81,35 @@ const About = () => {
                     {/* Stats */}
                     <div className="grid grid-cols-2 gap-8 pt-4">
 
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.4 }}
+                        >
                             <p className="text-h2 font-bold text-white mb-1">1+</p>
                             <p className="text-sm text-zinc-500 uppercase tracking-widest">
                                 Experience
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: 0.5 }}
+                        >
                             <p className="text-h2 font-bold text-white mb-1">3+</p>
                             <p className="text-sm text-zinc-500 uppercase tracking-widest">
                                 Full-Stack Projects
                             </p>
-                        </div>
+                        </motion.div>
 
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
 };
 
-export default About;
+export default About;
