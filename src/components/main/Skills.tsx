@@ -28,6 +28,8 @@ const skills: Skill[] = [
     { name: "Git", icon: "/skills-icons/git-logo.png" },
     { name: "VS Code", icon: "/skills-icons/vs-code-logo.png" },
     { name: "Redux", icon: "/skills-icons/redux-logo.png" },
+    { name: "Antigravity", icon: "/skills-icons/antigravity-logo.png" },
+    { name: "Cursor", icon: "/skills-icons/cursor-logo.png" },
 ];
 
 const Skills: React.FC = () => {
