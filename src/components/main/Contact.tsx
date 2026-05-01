@@ -1,10 +1,42 @@
 import { motion } from 'framer-motion';
+import { useForm, type SubmitHandler } from 'react-hook-form';
+
+type Inputs = {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    access_key: string;
+};
 
 const Contact = () => {
+    const { register, handleSubmit, reset } = useForm<Inputs>();
+
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        data.access_key = "c1492540-594c-4445-987d-b1b04ac14d0b"
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const res = await response.json();
+        if (res.success) {
+            alert("Message sent successfully!");
+            reset();
+        } else {
+            alert("Failed to send message. Please try again.");
+        }
+    };
+
     return (
         <section className="py-xl" id="contact">
             <div className="max-w-7xl mx-auto px-8">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -12,7 +44,7 @@ const Contact = () => {
                     className="bg-surface-container rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl grid grid-cols-1 md:grid-cols-2"
                 >
                     <div className="p-12 md:p-20 bg-zinc-950 border-r border-zinc-800">
-                        <motion.h2 
+                        <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -21,7 +53,7 @@ const Contact = () => {
                         >
                             Start a Project.
                         </motion.h2>
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -30,14 +62,14 @@ const Contact = () => {
                         >
                             Have a technical challenge or a product idea? Let's discuss how we can build it with rigor and precision.
                         </motion.p>
-                        
+
                         <div className="space-y-8">
                             {[
                                 { icon: 'add_call', label: 'Phone', value: '+8801955207333' },
                                 { icon: 'alternate_email', label: 'Email Me', value: 'sakib.cse.333@gmail.com' },
                                 { icon: 'location_on', label: 'Current Location', value: 'Dhaka, Bangladesh', weight: 'fill' }
                             ].map((item, index) => (
-                                <motion.div 
+                                <motion.div
                                     key={item.label}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
@@ -56,7 +88,7 @@ const Contact = () => {
                             ))}
                         </div>
 
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -75,12 +107,12 @@ const Contact = () => {
                         </motion.div>
                     </div>
                     <div className="p-12 md:p-20">
-                        <form className="space-y-6">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             {[
-                                { label: 'Your Name', placeholder: 'John Doe', type: 'text' },
-                                { label: 'Email Address', placeholder: 'john@example.com', type: 'email' }
+                                { label: 'Your Name', placeholder: 'John Doe', type: 'text', name: 'name' },
+                                { label: 'Email Address', placeholder: 'john@example.com', type: 'email', name: 'email' }
                             ].map((field, index) => (
-                                <motion.div 
+                                <motion.div
                                     key={field.label}
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -89,10 +121,15 @@ const Contact = () => {
                                     className="space-y-2"
                                 >
                                     <label className="text-xs font-semibold uppercase text-zinc-500 tracking-widest">{field.label}</label>
-                                    <input className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder={field.placeholder} type={field.type} />
+                                    <input
+                                        {...register(field.name as keyof Inputs, { required: true })}
+                                        className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                        placeholder={field.placeholder}
+                                        type={field.type}
+                                    />
                                 </motion.div>
                             ))}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -100,14 +137,17 @@ const Contact = () => {
                                 className="space-y-2"
                             >
                                 <label className="text-xs font-semibold uppercase text-zinc-500 tracking-widest">Subject</label>
-                                <select className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all">
-                                    <option>Full-stack Project</option>
-                                    <option>Technical Consultation</option>
-                                    <option>Career Opportunity</option>
-                                    <option>Other</option>
+                                <select
+                                    {...register('subject', { required: true })}
+                                    className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                >
+                                    <option value="Full-stack Project">Full-stack Project</option>
+                                    <option value="Technical Consultation">Technical Consultation</option>
+                                    <option value="Career Opportunity">Career Opportunity</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </motion.div>
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -115,9 +155,14 @@ const Contact = () => {
                                 className="space-y-2"
                             >
                                 <label className="text-xs font-semibold uppercase text-zinc-500 tracking-widest">Message</label>
-                                <textarea className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="How can I help you?" rows={4}></textarea>
+                                <textarea
+                                    {...register('message', { required: true })}
+                                    className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                    placeholder="How can I help you?"
+                                    rows={4}
+                                ></textarea>
                             </motion.div>
-                            <motion.button 
+                            <motion.button
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
