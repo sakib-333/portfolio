@@ -1,9 +1,16 @@
+import { motion } from 'framer-motion';
 
 const Projects = () => {
     return (
         <section className="py-xl bg-background" id="projects">
             <div className="max-w-7xl mx-auto px-8">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
+                >
                     <div>
                         <h2 className="font-h2 text-h2 text-white mb-4">Selected Works</h2>
                         <p className="text-on-surface-variant">A collection of engineering-first digital products.</p>
@@ -16,10 +23,17 @@ const Projects = () => {
                         View All Repository
                         <span className="material-symbols-outlined">open_in_new</span>
                     </a>
-                </div>
+                </motion.div>
+
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
                     {/* Project-1 */}
-                    <div className="md:col-span-8 bg-surface-container border border-zinc-800 rounded-2xl overflow-hidden relative group">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="md:col-span-8 bg-surface-container border border-zinc-800 rounded-2xl overflow-hidden relative group"
+                    >
                         <img
                             alt="tourify"
                             className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
@@ -43,10 +57,16 @@ const Projects = () => {
                                 <span className="material-symbols-outlined ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Project-2 */}
-                    <div className="md:col-span-4 bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden p-8 flex flex-col justify-between hover:border-primary-container transition-colors">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="md:col-span-4 bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden p-8 flex flex-col justify-between hover:border-primary-container transition-colors"
+                    >
                         <div>
                             <div className="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center mb-8">
                                 <span className="material-symbols-outlined">sports_and_outdoors</span>
@@ -66,10 +86,15 @@ const Projects = () => {
                                 rel="noopener noreferrer"
                             >Explore <span className="material-symbols-outlined text-sm">north_east</span></a>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Project-3 */}
-                    <div className="md:col-span-6 bg-surface-container border border-zinc-800 rounded-2xl overflow-hidden relative group cursor-pointer"
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="md:col-span-6 bg-surface-container border border-zinc-800 rounded-2xl overflow-hidden relative group cursor-pointer"
                         onClick={() => window.open('https://ph-b10-a12.web.app/', '_blank')}
                     >
                         <img
@@ -86,17 +111,23 @@ const Projects = () => {
                                 <span className="text-secondary font-mono text-xs">MongoDB</span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Project-4 */}
-                    <div className="md:col-span-6 bg-[#141414] border border-[#222222] rounded-2xl p-8 hover:border-primary-container transition-all hover:-translate-y-1 shadow-lg group">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="md:col-span-6 bg-[#141414] border border-[#222222] rounded-2xl p-8 hover:border-primary-container transition-all hover:-translate-y-1 shadow-lg group"
+                    >
                         <div className="flex justify-between items-start mb-8">
                             <span className="material-symbols-outlined text-4xl text-primary">exercise</span>
                             <span className="text-zinc-600 font-mono text-sm">2024 Project</span>
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-4">Fitness</h3>
                         <p className="text-zinc-400 mb-8">Personal fitness tracking with algorithmic meal planning and progress visualization.</p>
-                        <div className="flex items-center gap-4">
+                        <div className="items-center flex gap-4">
                             <a className="bg-zinc-900 border border-zinc-800 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-zinc-800 transition-colors"
                                 href="https://github.com/sakib-333/PH-B10-A2"
                                 target="_blank"
@@ -111,7 +142,7 @@ const Projects = () => {
                                 <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform">arrow_outward</span>
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
