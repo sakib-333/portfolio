@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { useForm, type SubmitHandler } from 'react-hook-form';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 type Inputs = {
     name: string;
@@ -10,26 +12,34 @@ type Inputs = {
 };
 
 const Contact = () => {
-    const { register, handleSubmit, reset } = useForm<Inputs>();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-        data.access_key = "c1492540-594c-4445-987d-b1b04ac14d0b"
+        setIsSubmitting(true);
+        data.access_key = import.meta.env.VITE_API_KEY
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(data)
-        });
+        try {
+            const response = await fetch(import.meta.env.VITE_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify(data)
+            });
 
-        const res = await response.json();
-        if (res.success) {
-            alert("Message sent successfully!");
-            reset();
-        } else {
-            alert("Failed to send message. Please try again.");
+            const res = await response.json();
+            if (res.success) {
+                toast.success("Message sent successfully!");
+                reset();
+            } else {
+                toast.error("Failed to send message. Please try again.");
+            }
+        } catch (error) {
+            toast.error("An error occurred. Please try again.");
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -122,11 +132,14 @@ const Contact = () => {
                                 >
                                     <label className="text-xs font-semibold uppercase text-zinc-500 tracking-widest">{field.label}</label>
                                     <input
-                                        {...register(field.name as keyof Inputs, { required: true })}
-                                        className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                        {...register(field.name as keyof Inputs, { required: `${field.label} is required` })}
+                                        className={`w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all ${errors[field.name as keyof Inputs] ? 'border-red-500' : ''}`}
                                         placeholder={field.placeholder}
                                         type={field.type}
                                     />
+                                    {errors[field.name as keyof Inputs] && (
+                                        <p className="text-red-500 text-xs mt-1">{errors[field.name as keyof Inputs]?.message}</p>
+                                    )}
                                 </motion.div>
                             ))}
                             <motion.div
@@ -138,14 +151,18 @@ const Contact = () => {
                             >
                                 <label className="text-xs font-semibold uppercase text-zinc-500 tracking-widest">Subject</label>
                                 <select
-                                    {...register('subject', { required: true })}
-                                    className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                    {...register('subject', { required: 'Subject is required' })}
+                                    className={`w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all ${errors.subject ? 'border-red-500' : ''}`}
                                 >
+                                    <option value="">Select a subject</option>
                                     <option value="Full-stack Project">Full-stack Project</option>
                                     <option value="Technical Consultation">Technical Consultation</option>
                                     <option value="Career Opportunity">Career Opportunity</option>
                                     <option value="Other">Other</option>
                                 </select>
+                                {errors.subject && (
+                                    <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
+                                )}
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
@@ -156,20 +173,32 @@ const Contact = () => {
                             >
                                 <label className="text-xs font-semibold uppercase text-zinc-500 tracking-widest">Message</label>
                                 <textarea
-                                    {...register('message', { required: true })}
-                                    className="w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                                    {...register('message', { required: 'Message is required' })}
+                                    className={`w-full bg-zinc-900 border-zinc-800 rounded-lg py-3 px-4 text-white focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all ${errors.message ? 'border-red-500' : ''}`}
                                     placeholder="How can I help you?"
                                     rows={4}
                                 ></textarea>
+                                {errors.message && (
+                                    <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
+                                )}
                             </motion.div>
                             <motion.button
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.9 }}
-                                className="w-full bg-primary-container text-white py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_20px_rgba(0,98,57,0.3)] active:scale-[0.98] transition-all" type="submit"
+                                disabled={isSubmitting}
+                                className={`w-full bg-primary-container text-white py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-[0_0_20px_rgba(0,98,57,0.3)] active:scale-[0.98]'}`}
+                                type="submit"
                             >
-                                Send Message
+                                {isSubmitting ? (
+                                    <>
+                                        <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                                        Sending...
+                                    </>
+                                ) : (
+                                    'Send Message'
+                                )}
                             </motion.button>
                         </form>
                     </div>

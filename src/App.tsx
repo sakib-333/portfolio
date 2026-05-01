@@ -8,6 +8,9 @@ import Home from "./components/main/Home";
 import Skills from "./components/main/Skills";
 import Projects from "./components/main/Projects";
 import Footer from "./components/footer/Footer";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   const [activeSection, setActiveSection] = useState<string>("home");
@@ -45,6 +48,7 @@ const App = () => {
         <Contact />
       </main>
       <Footer />
+      <ToastContainer position="top-center" theme="dark" />
     </div>
   );
 };
