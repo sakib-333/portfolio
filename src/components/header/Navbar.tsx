@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const Navbar = () => {
+interface NavbarProps {
+    activeSection?: string;
+}
+
+const Navbar = ({ activeSection }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -36,15 +40,22 @@ const Navbar = () => {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-3">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            className="text-zinc-400 hover:text-white hover:bg-zinc-900/50 text-xs rounded-md px-1 py-0.5 transition-all"
-                            href={link.href}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isActive = link.href.replace('#', '') === activeSection;
+                        return (
+                            <a
+                                key={link.name}
+                                className={`text-xs rounded-md px-2 py-1 transition-all ${
+                                    isActive 
+                                    ? "text-primary bg-primary-container/50" 
+                                    : "text-zinc-400 hover:text-white hover:bg-zinc-900/50"
+                                }`}
+                                href={link.href}
+                            >
+                                {link.name}
+                            </a>
+                        );
+                    })}
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -84,17 +95,22 @@ const Navbar = () => {
             {/* Mobile Navigation */}
             <div className={`fixed inset-0 top-16 w-full h-[calc(100vh-4rem)] bg-zinc-950/98 backdrop-blur-xl md:hidden transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
                 <div className="flex flex-col items-center justify-center h-full gap-8 px-6 overflow-scroll">
-                    {navLinks.map((link, index) => (
-                        <a
-                            key={link.name}
-                            className="text-zinc-400 hover:text-white transition-all text-2xl font-medium tracking-tight hover:scale-110 active:scale-95"
-                            href={link.href}
-                            style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    {navLinks.map((link, index) => {
+                        const isActive = link.href.replace('#', '') === activeSection;
+                        return (
+                            <a
+                                key={link.name}
+                                className={`transition-all text-2xl font-medium tracking-tight hover:scale-110 active:scale-95 ${
+                                    isActive ? "text-white scale-110 font-bold" : "text-zinc-400 hover:text-white"
+                                }`}
+                                href={link.href}
+                                style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        );
+                    })}
                 </div>
             </div>
         </nav>
