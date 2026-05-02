@@ -21,7 +21,11 @@ const Projects = () => {
                         rel="noopener noreferrer"
                     >
                         View All Repository
-                        <span className="material-symbols-outlined">open_in_new</span>
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/>
+                            </svg>
+                        </span>
                     </a>
                 </motion.div>
 
@@ -54,7 +58,11 @@ const Projects = () => {
                                 rel="noopener noreferrer"
                             >
                                 View Project
-                                <span className="material-symbols-outlined ml-2 group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                                <span className="group-hover/link:translate-x-1 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </span>
                             </a>
                         </div>
                     </motion.div>
@@ -68,8 +76,12 @@ const Projects = () => {
                         className="md:col-span-4 bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden p-8 flex flex-col justify-between hover:border-primary-container transition-colors"
                     >
                         <div>
-                            <div className="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center mb-8">
-                                <span className="material-symbols-outlined">sports_and_outdoors</span>
+                            <div className="w-12 h-12 bg-primary-container/20 rounded-lg flex items-center justify-center mb-2">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                                        <path d="m137-160-57-56 164-164q31-31 42.5-77.5T298-600q0-58 26-114t74-104q91-91 201-103t181 61q72 72 60 182T738-478q-48 48-104 74t-114 26q-97 0-142 11t-77 43L137-160Zm275-334q47 46 127 34t143-75q64-64 76.5-143.5T724-803q-48-48-125.5-36T456-763q-63 63-76.5 142.5T412-494ZM607-87q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113T833-87q-47 47-113 47T607-87Zm169.5-56.5Q800-167 800-200t-23.5-56.5Q753-280 720-280t-56.5 23.5Q640-233 640-200t23.5 56.5Q687-120 720-120t56.5-23.5ZM720-200Z"/>
+                                    </svg>
+                                </span>
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-4">Hocky's</h3>
                             <p className="text-zinc-400 mb-6">Enterprise-grade file synchronization service with end-to-end encryption using MongoDB GridFS.</p>
@@ -84,7 +96,14 @@ const Projects = () => {
                                 href="https://sakib-333.github.io/hockey"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                            >Explore <span className="material-symbols-outlined text-sm">north_east</span></a>
+                            >
+                                <span>Explore</span>
+                                <span className="text-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                                        <path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z"/>
+                                    </svg>
+                                </span>
+                            </a>
                         </div>
                     </motion.div>
 
@@ -122,7 +141,11 @@ const Projects = () => {
                         className="md:col-span-6 bg-[#141414] border border-[#222222] rounded-2xl p-8 hover:border-primary-container transition-all hover:-translate-y-1 shadow-lg group"
                     >
                         <div className="flex justify-between items-start mb-8">
-                            <span className="material-symbols-outlined text-4xl text-primary">exercise</span>
+                             <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                                        <path d="m826-585-56-56 30-31-128-128-31 30-57-57 30-31q23-23 57-22.5t57 23.5l129 129q23 23 23 56.5T857-615l-31 30ZM346-104q-23 23-56.5 23T233-104L104-233q-23-23-23-56.5t23-56.5l30-30 57 57-31 30 129 129 30-31 57 57-30 30Zm397-336 57-57-303-303-57 57 303 303ZM463-160l57-58-302-302-58 57 303 303Zm-6-234 110-109-64-64-109 110 63 63Zm63 290q-23 23-57 23t-57-23L104-406q-23-23-23-57t23-57l57-57q23-23 56.5-23t56.5 23l63 63 110-110-63-62q-23-23-23-57t23-57l57-57q23-23 56.5-23t56.5 23l303 303q23 23 23 56.5T857-441l-57 57q-23 23-57 23t-57-23l-62-63-110 110 63 63q23 23 23 56.5T577-161l-57 57Z"/>
+                                    </svg>
+                                </span>
                             <span className="text-zinc-600 font-mono text-sm">2024 Project</span>
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-4">Fitness</h3>
@@ -133,13 +156,17 @@ const Projects = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >Source Code</a>
-                            <a className="text-primary font-bold flex items-center gap-1 group/btn"
+                            <a className="text-primary font-bold flex items-center gap-1"
                                 href="https://sakib-333.github.io/PH-B10-A2"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 Live Demo
-                                <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-0.5 transition-transform">arrow_outward</span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </span>
                             </a>
                         </div>
                     </motion.div>

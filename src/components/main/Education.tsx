@@ -29,7 +29,10 @@ const Education = () => {
                                 {/* Icon Column */}
                                 <div className="shrink-0">
                                     <div className="w-20 h-20 rounded-2xl bg-primary-container/20 border border-primary/20 flex items-center justify-center text-primary shadow-[0_0_20px_rgba(134,216,164,0.1)]">
-                                        <span className="material-symbols-outlined text-4xl">school</span>
+                                        {/* <span className="material-symbols-outlined text-4xl">school</span> */}
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="currentColor">
+                                            <path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z"/>
+                                        </svg>
                                     </div>
                                 </div>
                                 {/* Content Column */}
