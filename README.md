@@ -1,7 +1,6 @@
-# Modern Developer Portfolio
+# Sakib's Portfolio
 
 A high-performance, responsive, and visually stunning developer portfolio built with the latest web technologies. This project showcases my skills, experience, and projects through a modern and interactive user interface.
-
 
 ## 🚀 Technologies Used
 
@@ -9,8 +8,20 @@ A high-performance, responsive, and visually stunning developer portfolio built 
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** Material Symbols & Custom SVG Icons
+- **Animations:** [Motion](https://motion.dev/) (Framer Motion)
+- **Form Management:** [React Hook Form](https://react-hook-form.com/)
+- **Notifications:** [React Toastify](https://fkhadra.github.io/react-toastify/)
+
+### 📦 Key Packages
+- `react@19` - Latest React features & performance.
+- `vite` - Next generation frontend tooling.
+- `tailwindcss@4` - Modern utility-first CSS framework.
+- `motion` - Powerful animation library for React.
+- `react-hook-form` - Performant, flexible and extensible forms.
+- `react-toastify` - Easy to use toast notifications.
+- `babel-plugin-react-compiler` - Optimized React rendering logic.
+- `typescript` - Static type checking for robust code.
+
 
 ## ✨ Key Features
 
@@ -20,7 +31,21 @@ A high-performance, responsive, and visually stunning developer portfolio built 
 - **Project Showcase:** Detailed cards for projects with descriptions and tech stacks.
 - **Experience Timeline:** A polished timeline showing professional growth.
 - **Responsive Design:** Optimized for all devices, from mobile phones to large desktops.
+- **Scroll Spy Navigation:** Navbar automatically updates based on the current scroll position.
 - **Clean Architecture:** Well-organized component-based structure for maintainability.
+
+## 📩 Message Sending Feature
+
+The portfolio includes a fully functional contact form that allows users to send messages directly.
+
+### Features:
+- **Client-side Validation:** Powered by `React Hook Form` to ensure all required fields (Name, Email, Subject, Message) are correctly filled before submission.
+- **Secure API Integration:** Integrated with [Web3Forms](https://web3forms.com/) for reliable email delivery without a custom backend.
+- **Interactive Feedback:** Real-time success and error notifications via `React Toastify`.
+- **User Experience:**
+  - Loading states with animated spinners on the submit button.
+  - Automatic form reset upon successful submission.
+  - Subject line customization for easy tracking.
 
 ## 🛠️ Project Structure
 
@@ -28,10 +53,10 @@ A high-performance, responsive, and visually stunning developer portfolio built 
 src/
 ├── components/
 │   ├── footer/      # Footer components
-│   ├── header/      # Navigation and header
-│   └── main/        # Core sections (About, Projects, Skills, etc.)
+│   ├── header/      # Navigation and Scroll Spy logic
+│   └── main/        # Core sections (About, Contact, Projects, Skills, etc.)
 ├── assets/          # Static assets and icons
-├── App.tsx          # Main application entry
+├── App.tsx          # Main application entry and Scroll Spy setup
 ├── index.css        # Global styles and Tailwind configuration
 └── main.tsx         # React initialization
 ```
@@ -60,6 +85,13 @@ src/
    npm install
    ```
 
+4. Set up environment variables:
+   Create a `.env` file in the root directory and add your Web3Forms credentials:
+   ```env
+   VITE_URL=https://api.web3forms.com/submit
+   VITE_API_KEY=your_web3forms_access_key
+   ```
+
 ### Development
 
 Run the development server:
@@ -80,5 +112,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by [Sakib](https://github.com/yourusername)
-
+Built with ❤️ by [Sakib](https://github.com/sakib-333)
