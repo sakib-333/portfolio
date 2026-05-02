@@ -64,8 +64,10 @@ const Home = ({ handleScroll }: HomeProps) => {
                             className="group bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,98,57,0.3)] cursor-pointer"
                         >
                             <span>View My Work</span>
-                            <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">
-                                arrow_forward
+                            <span className="transition-transform duration-300 group-hover:translate-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                </svg>
                             </span>
                         </button>
 
