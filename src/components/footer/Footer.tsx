@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="flex gap-8">
                     <a
                         className="text-zinc-500 hover:text-emerald-400 transition-colors opacity-80 hover:opacity-100"
-                        href="https://github.com"
+                        href="https://github.com/sakib-333"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -19,7 +19,7 @@ const Footer = () => {
                     </a>
                     <a
                         className="text-zinc-500 hover:text-emerald-400 transition-colors opacity-80 hover:opacity-100"
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/sakibur-rahman"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -27,7 +27,15 @@ const Footer = () => {
                     </a>
                     <a
                         className="text-zinc-500 hover:text-emerald-400 transition-colors opacity-80 hover:opacity-100"
-                        href="https://facebook.com"
+                        href="https://wa.me/8801955207333"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+                    <a
+                        className="text-zinc-500 hover:text-emerald-400 transition-colors opacity-80 hover:opacity-100"
+                        href="https://www.facebook.com/sakib071"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
