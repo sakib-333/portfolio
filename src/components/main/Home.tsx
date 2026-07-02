@@ -55,11 +55,11 @@ const Home = ({ handleScroll }: HomeProps) => {
                     </h1>
 
                     <p className="mt-4 text-zinc-400 text-justify">
-                        Motivated frontend developer with a strong track record of successfully completing various projects. Proficient in various programming languages and technologies, including C, C++, and web development technologies (HTML, CSS, JavaScript, TypeScript, and React). Strong problem-solving abilities and a solid understanding of frontend development principles. Committed to continuous learning and delivering high-quality solutions. Ready to contribute expertise to new challenges.
+                        Frontend Developer with 1+ year of professional experience building production-ready web and mobile applications. Specialized in React, React Native (Expo), TypeScript, and modern JavaScript technologies, with experience developing responsive, scalable, and user-friendly applications. Proficient in integrating REST APIs, Firebase, and Supabase, with a strong focus on clean UI design, performance optimization, and maintainable code. Passionate about continuous learning, solving real-world problems, and leveraging AI-powered development tools to deliver high-quality software.
                     </p>
 
                     <div className="mt-6 flex gap-4">
-                        <button 
+                        <button
                             onClick={() => handleScroll?.('projects')}
                             className="group bg-primary-container px-6 py-3 rounded-lg text-white flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,98,57,0.3)] cursor-pointer"
                         >
@@ -71,7 +71,7 @@ const Home = ({ handleScroll }: HomeProps) => {
                             </span>
                         </button>
 
-                        <button 
+                        <button
                             onClick={() => handleScroll?.('contact')}
                             className="border px-6 py-3 rounded-lg text-white border-zinc-700 hover:bg-zinc-900 transition-colors cursor-pointer"
                         >
