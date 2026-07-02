@@ -23,6 +23,7 @@ const skills: Skill[] = [
     { name: "Next.js", icon: "/skills-icons/nextjs-logo.png", category: "frontend" },
     { name: "Ant Design", icon: "/skills-icons/ant-design-logo.png", category: "frontend" },
     { name: "Redux", icon: "/skills-icons/redux-logo.png", category: "frontend" },
+    { name: "Zustand", icon: "/skills-icons/zustand-logo.png", category: "frontend" },
 
     { name: "Expo", icon: "/skills-icons/expo-logo.png", category: "tools" },
 
@@ -68,11 +69,10 @@ const Skills: React.FC = () => {
                         <button
                             key={cat}
                             onClick={() => setActiveTab(cat)}
-                            className={`px-6 py-2.5 rounded-full border transition-all duration-300 text-sm font-semibold uppercase tracking-wide ${
-                                activeTab === cat
+                            className={`px-6 py-2.5 rounded-full border transition-all duration-300 text-sm font-semibold uppercase tracking-wide ${activeTab === cat
                                     ? "bg-primary text-on-primary border-primary shadow-[0_0_20px_rgba(134,216,164,0.25)] scale-105"
                                     : "bg-surface-container border-zinc-800 text-on-surface-variant hover:border-zinc-700 hover:text-white"
-                            }`}
+                                }`}
                         >
                             {cat}
                         </button>
@@ -81,7 +81,7 @@ const Skills: React.FC = () => {
 
                 <motion.div
                     layout
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 min-h-[350px] items-start"
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 min-h-87.5 items-start"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredSkills.map((skill) => (
@@ -103,7 +103,7 @@ const Skills: React.FC = () => {
                                     />
                                 </div>
                                 <span className="text-white text-sm font-medium tracking-wide group-hover:text-primary transition-colors">{skill.name}</span>
-                                
+
                                 {/* Subtle background glow on hover */}
                                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                             </motion.div>
