@@ -27,12 +27,14 @@ const skills: Skill[] = [
 
     { name: "Expo", icon: "/skills-icons/expo-logo.png", category: "tools" },
 
-    { name: "Node", icon: "/skills-icons/nodejs-logo.png", category: "backend" },
+    { name: "Node.js", icon: "/skills-icons/nodejs-logo.png", category: "backend" },
+    { name: "NestJS", icon: "/skills-icons/nest-logo.png", category: "backend" },
     { name: "Express", icon: "/skills-icons/express-logo.png", category: "backend" },
 
     { name: "MongoDB", icon: "/skills-icons/mongodb-logo.png", category: "dbms" },
     { name: "MySQL", icon: "/skills-icons/mysql-logo.png", category: "dbms" },
     { name: "Supabase", icon: "/skills-icons/supabase-logo.png", category: "dbms" },
+    { name: "Convex", icon: "/skills-icons/convex-logo.png", category: "dbms" },
 
     { name: "Git", icon: "/skills-icons/git-logo.png", category: "tools" },
     { name: "VS Code", icon: "/skills-icons/vs-code-logo.png", category: "tools" },
@@ -92,7 +94,6 @@ const Skills: React.FC = () => {
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.8, y: 20 }}
                                 transition={{ duration: 0.4, ease: "easeOut" }}
-                                whileHover={{ y: -5, transition: { duration: 0.2 } }}
                                 className="bg-surface-container border border-zinc-800 p-4 rounded-xl skill-gradient hover:border-primary/40 transition-all group flex flex-col items-center justify-center text-center relative overflow-hidden aspect-square"
                             >
                                 <div className="w-14 h-14 bg-zinc-900/50 rounded-lg flex items-center justify-center mb-3 border border-zinc-800 group-hover:scale-110 group-hover:border-primary/50 transition-all duration-300 overflow-hidden p-2">
