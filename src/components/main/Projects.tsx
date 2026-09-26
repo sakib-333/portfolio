@@ -37,6 +37,53 @@ const Projects = () => {
                     >
                         <div className="aspect-video overflow-hidden">
                             <img
+                                alt="Quizzen AI"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="/project-images/quizzen-ai.png"
+                            />
+                        </div>
+                        <div className="p-6 space-y-4">
+                            <div className="flex flex-wrap gap-2">
+                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">React</span>
+                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">NestJS</span>
+                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Convex</span>
+                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Shadcn UI</span>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">Quizzen AI</h3>
+                                <p className="text-on-surface-variant text-sm">Quizzen AI is a TypeScript-powered quiz platform that uses AI to generate engaging assessments, personalize questions, and simplify the learning experience for both creators and learners.</p>
+                            </div>
+                            <div className="flex items-center gap-3 pt-2">
+                                <a
+                                    className="flex-1 bg-primary-container text-white py-2 rounded-lg text-center text-sm font-bold hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] transition-all"
+                                    href="https://quizzen-ai.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Live Demo
+                                </a>
+                                <a
+                                    className="flex-1 border border-zinc-700 text-white py-2 rounded-lg text-center text-sm font-bold hover:bg-zinc-800 transition-all"
+                                    href="https://github.com/sakib-333/quizzen-ai"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Project 2 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="md:col-span-6 bg-surface-container border border-zinc-800 rounded-2xl overflow-hidden group hover:border-primary/30 transition-all duration-300"
+                    >
+                        <div className="aspect-video overflow-hidden">
+                            <img
                                 alt="Digital Event Scheduler System"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                 src="/project-images/digital-event-scheduler-system.png"
@@ -74,7 +121,7 @@ const Projects = () => {
                         </div>
                     </motion.div>
 
-                    {/* Project 2 */}
+                    {/* Project 3 */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -112,54 +159,7 @@ const Projects = () => {
                                 </a>
                                 <a
                                     className="flex-1 border border-zinc-700 text-white py-2 rounded-lg text-center text-sm font-bold hover:bg-zinc-800 transition-all"
-                                    href="https://github.com/sakib-333"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Project 3 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="md:col-span-6 bg-surface-container border border-zinc-800 rounded-2xl overflow-hidden group hover:border-primary/30 transition-all duration-300"
-                    >
-                        <div className="aspect-video overflow-hidden">
-                            <img
-                                alt="Tourify"
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                src="/project-images/tourify.png"
-                            />
-                        </div>
-                        <div className="p-6 space-y-4">
-                            <div className="flex flex-wrap gap-2">
-                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Next.js</span>
-                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Node.js</span>
-                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Supabase</span>
-                                <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Shadcn UI</span>
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">Tourify</h3>
-                                <p className="text-on-surface-variant text-sm">Tourify is a comprehensive travel and tourism platform that streamlines tour planning and booking for both travelers and tour operators.</p>
-                            </div>
-                            <div className="flex items-center gap-3 pt-2">
-                                <a
-                                    className="flex-1 bg-primary-container text-white py-2 rounded-lg text-center text-sm font-bold hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] transition-all"
-                                    href="https://tourify-theta.vercel.app"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Live Demo
-                                </a>
-                                <a
-                                    className="flex-1 border border-zinc-700 text-white py-2 rounded-lg text-center text-sm font-bold hover:bg-zinc-800 transition-all"
-                                    href="https://github.com/sakib-333/tourify"
+                                    href="https://github.com/sakib-333/handy-kit"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
