@@ -84,9 +84,9 @@ const Projects = () => {
                     >
                         <div className="aspect-video overflow-hidden">
                             <img
-                                alt="Daily Utils"
+                                alt="Handy Kit"
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                src="/project-images/daily-utils.png"
+                                src="/project-images/handy-kit.png"
                             />
                         </div>
                         <div className="p-6 space-y-4">
@@ -98,13 +98,13 @@ const Projects = () => {
                                 <span className="px-2 py-1 bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-wider rounded">Shadcn UI</span>
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">Daily Utils</h3>
+                                <h3 className="text-xl font-bold text-white mb-2 font-space-grotesk">Handy Kit</h3>
                                 <p className="text-on-surface-variant text-sm">Developed a React and TypeScript web application providing free browser-based utilities, including developer tools, calculators, converters, text helpers, image tools, and productivity features.</p>
                             </div>
                             <div className="flex items-center gap-3 pt-2">
                                 <a
                                     className="flex-1 bg-primary-container text-white py-2 rounded-lg text-center text-sm font-bold hover:shadow-[0_0_15px_rgba(0,98,57,0.4)] transition-all"
-                                    href="https://daily-utils.web.app/"
+                                    href="https://handy-kit.web.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
