@@ -14,7 +14,7 @@ const experiences: ExperienceItem[] = [
         role: "Junior Software Developer",
         company: "Edutechs Limited",
         companyWebsite: "https://edutechs.app/welcome",
-        period: "November 2025 - Present",
+        period: "November 2025 - September 2026",
         description: [
             "Built and maintained secure authentication and real-time sync using Firebase.",
             "Delivered end-to-end features with smooth frontend-backend integration.",
